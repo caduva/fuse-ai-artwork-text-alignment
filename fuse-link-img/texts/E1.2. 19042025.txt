@@ -1,0 +1,684 @@
+E1.2. Is Happiness a valid objective?
+
+E1.2.A. MOST PHILOSOPHIES ADOPT HAPPINESS AS THEIR GOAL
+With the exception of purely utilitarian or hedonistic philosophies, which equate happiness with pleasure, eudemonistic philosophies - those which regard happiness as the main goal of life, the "sovereign good", for Aristotle an end in itself and not merely a means to an end - make it conditional on respect for certain values (pleasure, virtue, peace of mind). All agree that true happiness is better than false joy, as Socrates put it: "A life without examination is not worth living. The difficulty lies in defining the path to happiness.
+
+Spinoza reverses the formulation of the happiness-virtue problem: for him, joy is first - it is the condition of virtue (the question is no longer to condition happiness on virtue, since the latter follows from the former).
+
+For Kant, virtue in accordance with the moral law is what makes us truly human; happiness is not desirable in itself. Nevertheless, man, in his finitude, continues to aspire to happiness and, in the moral act, generates the sense of self-respect that is pleasure: "This is where modernity begins, by separating us from happiness.
+
+E1.2.A.1. “ SOVEREIGN GOOD
+In every action, in every choice," writes Aristotle, "the good is the end, for it is in view of this end that everything else is accomplished" (Nicomachean Ethics, I, 5). But most of the ends we pursue are not worthwhile in themselves: they are merely means to other ends. For example, for many of us work is an end (and therefore a good) only in terms of the money it enables us to earn, just as money is a good only in terms of the comfort or luxury it affords... But if every end were only a means to another end, which was only a means to another end, and so on ad infinitum, our desire would by definition be insatiable. We will say that this is indeed the case, and that's what the Greeks refused to accept. Aristotle continues: "If, then, there is one end of our activities which we desire for its own sake and the others only because of it, and if we do not choose one thing indefinitely with a view to another (for then we would go on indefinitely, so that desire would be futile and vain), it is clear that this end can only be the good, the sovereign good" (ibid., I, 1). This is at least a formal definition: the sovereign good would be the final end, as Aristotle puts it, in other words, the end that is the means to no end, and of which all other ends are merely the means. It would be the ultimate goal of all our actions.
+But what is it? What is it that is good above all else, that we desire for its own sake, and for the sake of which we desire everything else? Epicurus would answer: "Happiness, because we always choose it for its own sake and never for the sake of anything else" (ibid., 1.5; see also X, 6). Epicurus would rather answer: "Pleasure", for happiness is worthwhile only insofar as it is pleasurable, while pleasure without happiness is still worthwhile. The Stoics, on the other hand, would answer "virtue," since virtue is enough to make us happy, and happiness, which is impossible, would be better without it. Between these three ethics, centered on three sovereign goods, we must avoid pushing the distinction too far. Eudemonism is a common feature of Greek wisdom: for Epicurus or Zeno, the idea that happiness might not be pleasant or virtuous was nothing more than a purely academic hypothesis, which they never seriously considered. Happiness for all is the goal: it is activity in accordance with virtue (Aristotle), pleasure in the repose of the soul (Epicurus), or virtue in action (Zeno).
+(André Comte-Sponville, Philosophical Dictionary, 2013)
+
+E1.2.A.1.1. "MEANS 
+[...] Notice, with Aristotle, that the same thing can be both the means to an end and the end of a means. For example, money: an end for work, a means for comfort or luxury. Or comfort: end for money, means for pleasure. But if this were the case indefinitely, with each end merely a means to another end, we'd never stop choosing one thing over another, so that, as Aristotle writes, "desire would be futile and vain. So we have to stop somewhere, and to do that we have to find a "perfect end" that is the end of all means and the means to no end. This is the case with happiness, and happiness alone: "Everything we choose is chosen with a view to something else, except happiness, which is an end in itself (Nicomachean Ethics, I and X)".
+(André Comte-Sponville, Philosophical Dictionary, 2013)
+
+"Since there are evidently more than one end, and we choose some of these (e.g., wealth, flutes, and in general instruments) for the sake of something else, clearly not all ends are final ends; but the chief good is evidently something final. Therefore, if there is only one final end, this will be what we are seek-ing, and if there are more than one, the most final of these will be what we are seeking. Now we call that which is in itself worthy of pursuit more final than that which is worthy of pursuit for the sake of some-thing else, and that which is never desirable for the sake of something else more final than the things that are desirable both in themselves and for the sake of that other thing, and therefore we call final without quali-fication that which is always desirable in itself and never for the sake of something else.
+
+Now such a thing happiness, above all else, is held to be; for this we choose always for self and never for the sake of something else, but honour, pleasure, reason, and every virtue we choose indeed for them-selves (for if nothing resulted from them we should still choose each of them), but we choose them also for the sake of happiness, judging that by means of them we shall be happy. Happiness, on the other hand, no one chooses for the sake of these, nor, in general, for anything other than itself.
+
+From the point of view of self-sufficiency the same result seems to follow; for the final good is thought to be self-sufficient. Now by self-sufficient we do not mean that which is sufficient for a man by himself, for one who lives a solitary life, but also for parents, children, wife, and in general for his friends and fellow citizens, since man is born for citi-zenship. But some limit must be set to this; for if we extend our require-ment to ancestors and descendants and friends' friends we are in for an infinite series. Let us examine this question, however, on another occa-sion; the self-sufficient we now define as that which when isolated makes life desirable and lacking in nothing; and such we think happiness to be: and further we think it most desirable of all things, without being counted as one good thing among others if it were so counted it would clearly be made more desirable by the addition of even the least of goods; for that which is added becomes an excess of goods, and of goods the greater is always more desirable. Happiness, then, is something final and self-sufficient, and is the end of action."
+(Aristotle, Nicomachean Ethics, circa 350 BC)
+
+E1.2.A.1.2. ““GAUDEAMUS IGITUR.”—Joy must contain edifying and healing forces for the moral nature of man. Otherwise, how comes it that our soul, as soon as it basks in the sunshine of joy, unconsciously vows to itself, “I will be good!” “I will become perfect!” and is at once seized by a premonition of perfection that is like a shudder of religious awe?”
+(Friedrich Nietzsche, Human, All Too Human II, Aphorism 339, 1878)
+
+E1.2.A.2. THE BEST LIFE IS NOT NECESSARILY THE MOST PLEASANT LIFE: Someone who is solely living in a life of simple physical pleasures can have the same positive mental state that someone who is happy in the sense of more ample pleasures. It does not mean his life is as good, because he is missing out on some important human values: achievement, knowledge, moral conduct, etc.
+
+E1.2.A.2.1. "PLEASURE IS SOMETHING WE ALL SEEK. BUT SHOULD WE? IS IT THE MOST IMPORTANT THING IN LIFE? ARE ALL PLEASURES OF EQUAL VALUE? Robert Nozik imagined the thought experiment of a machine giving us infinite pleasures on the condition we would not be conscious that this was a simulation. Most of us would opt out of a life of that kind, preferring the suffering that comes with reality. This seems to show that pleasure is not as important as some thinkers such as Jeremy Bentham believed it to be. The best life is not necessarily the most pleasant life: achievement, knowledge, moral conduct are human values - but pleasure seems also to be essential. Classical utilitarians thought that pleasure was just one thing, but there are different types of good feelings - Pleasure that are simple feelings which are about physical sensations vs. pleasure "that" something is the case (animals don't have this kind of pleasures). Another distinction would be general mental states that permeate consciousness vs. localised pleasures (either physical or about specific happenings in the world). An example would be being in a good/bad mood, like the background of other localized emotions. Being pleased with your life as a whole. All those pleasures are valid, what matters about their relative importance is how much total "buzz" you get. Why is it that a life of pleasures is often looked at as unworthy whereas the search of happiness is generally praised? Because happiness is associated with the the more extended type of pleasure (pleasure "that" + ample in its causes)? Someone who is solely living in a life of simple physical pleasures can have the same positive mental state that someone who is happy in the sense we just said of more ample pleasures. It does not mean his life is as good, because he is missing out on some important human values: achievement, knowledge, moral conduct, etc. Thus Hurka's view is not an hedonistic one nor utilitarian: mindless pleasures (purely sensual) and vicious pleasures are overall less valuable than others and can be bad. According to that view of balancing pleasure with other human values, compassionate pain, which is a negative pleasure in the face of human suffering, can be a good thing because it is a morally fitting response to a situation. A pain is not always wasted as a purely hedonistic stance would argue. There is no correct way to weight the different values of one against the other: Probably the other values tend to matter more than pleasure in a good life. One resolution might be that virtue might be to be pleased by good things - if you lead a life that have all the other values in it, one aspect of your moral virtue will be that you will be pleased about your life."
+(Thomas Hurka on Pleasure, Philosophy Bites)
+
+Listen to the episode: http://philosophybites.com/2009/04/thomas-hurka-on-pleasure.html
+
+E1.5.B.13.3_REF1_PH.wE1.2.A.2.1.
+
+E1.2.A.2.2. "I USED TO THINK IT WAS GREAT TO DISREGARD HAPPINESS, TO PRESS ON TO A HIGH GOAL, CARELESS, DISDAINFUL OF IT. But now I see that there is nothing so great as to be capable of happiness; to pluck it out of « each moment and whatever happens »; to find that one can ride as gay and buoyant on the angry, menacing, tumultuous waves of life as on those that glide and glitter under a clear sky; that it is not defeat and wretchedness which come out of the storm of adversity, but strength and calmness. [...]
+One of the hardest things to make a child understand is, that down underneath your feet, if you go far enough, you come to blue sky and stars again; that there really is no « down » for the world, but only in every direction an « up. » And that this is an all-embracing truth, including within its scope every created thing, and, with deepest significance, every part, faculty, attribute, healthful impulse, mind, and body of a man (each and all facing towards and related to the Infinite on every side), is what we grown children find it hardest to realize, too. [...]"
+(Anne Gilchrist, The Letters of Anne Gilchrist and Walt Whitman)
+
+E1.6.B.2.5._REF1_PH.wE1.2.A.2.
+
+E1.2.A.3. KANT: "THIS IS WHERE MODERNITY BEGINS, BY SEPARATING US FROM HAPPINESS."
+"The union of happiness and virtue is synthetic," Kant explains, "not analytical: they are two 'quite different' concepts, whose union on this earth is never guaranteed and almost never given."
+
+E1.2.A.3.1. SOVEREIGN GOOD 
+The word "sovereign" is ambiguous, [Kant] remarks in the "Dialectic of Practical Reason": it can mean "supreme" or "perfect". But even if virtue is, as Kant wants it to be, "the supreme condition of all that can appear desirable," it will be "the complete and perfect good" only if it is accompanied by happiness. Indeed, if the sovereign good is the absolutely desirable, everyone will agree that it cannot exist without either happiness or virtue: what we desire is the conjunction or, as Kant put it, "the exact proportion" of the two. This is exactly what the Epicureans (for whom happiness is virtue) and the Stoics (for whom virtue is happiness) sought. They were both wrong. The union of happiness and virtue, Kant explains, is synthetic, not analytical: they are two "quite different" concepts, the union of which is never guaranteed and almost never given on this earth (C. R. Pratique, I, II, ch. 2). We must therefore renounce the sovereign good, or hope for it only in another life, after death. This is where modernity begins, by separating us from happiness.
+(André Comte-Sponville, Philosophical Dictionary, 2013)
+
+E1.2.A.3.2. "IS IT ENOUGH TO BE VIRTUOUS TO BE HAPPY? Kant's Critique of Practical Reason.
+For Kant, the question of happiness remains specific to each individual. It is a dimension alien to Kant's moral project, which is based on a claim to universality. For him, happiness is an ideal of the imagination. The desirable is projected by the subject onto objects, each in the particularity of its desire. The pursuit of happiness is an amoral (not immoral) aspiration. Virtue is the quality of the moral will and derives from the laws of freedom, whereas happiness is a state of sensibility and derives from the laws of nature. Nevertheless, Kant will have to add a promise of happiness to virtuous action, but happiness is not derived from virtue. Nevertheless, the virtuous person produces the sovereign good, which is not yet a complete good, because there is no happiness on the horizon of the moral life-this weakens the virtuous person's effort. For the virtuous, belief in the existence of God will be a means of achieving happiness through a synthesis between the two heterogeneous laws of nature and freedom. For Kant, "no one is bound to the impossible," so we cannot persevere in virtue while being unhappy without weakening the virtuous effort: "he must admit, from a practical point of view, the existence of a moral author of the world, that is, of God" (C.R.J.), at the risk of renouncing moral action under the weight of the tragedy of nature. But morality remains atheological.
+
+In the second critique (Critique of Practical Reason), reason appears to us more as a power to legislate than as a faculty (Critique of Pure Reason). Kant draws a line between the faculty of desire and the will: the latter is not determined by desirable ends, but only by the form of the moral law. How does this moral law impose itself on us? Its voice is inscribed in our consciousness, undermining the presumption/indulgence of self-love (as the judgment that we can be preferred to others) in favor of rational self-love (the filoteia of the Greeks). This is not moral angelism, but an analysis that revives the Greek tradition of friendship, which at the end of the Nicomachean Ethics is the place of transition-from the community of friends to the political community, from ethics to politics. Kant discovers the moral law that is given to every conscience, but in putting it into language, doesn't he invent an unprecedented formulation of problems? We hear the moral law, but it's a given that is difficult to formulate for ourselves in order to share it with others: philosophy is needed to put this given into language. This given is not deduced - it is an absolute that touches the conscience and is not bound by the principle of sufficient reason: this is unprecedented in the history of philosophy!
+In the third critique, the critique of the faculty of judgment, nature is replaced by a moral world - a reign of ends; the temporality of the emergence of the moral community is history. The space-time of nature is replaced by the world and history.
+Being attached to the production of virtue in the world and in history should free us from the notion of gain and interest, because we are in a different register: desirable ends are no longer the ends that determine us to act. What remains is the general interest (as in Rousseau) - not the object of action, but the action itself. Kant distinguishes between interest-profit and the interest we can take in action as such: it's being part of the promotion of freedom in history. 
+How can we still desire? The end is no longer antecedent, but returns as a consequent end. If virtue does not produce happiness in the moral world, vice can produce happiness in the natural world. The virtuous man who cannot be happy is condemned to live in a community where the wicked are happier than he is. Kant cannot ignore the happiness of the virtuous-otherwise the virtuous might even conclude that the moral law is an illusion. Man, in his finitude, continues to seek happiness; this truth cannot be ignored. For Kant, the virtuous can only be melancholic in temperament. Reasonable self-love is experienced as consolation and inner appeasement. It is the heightened self-esteem of one who, through virtue in action, has distanced himself from the "will to live”.
+(Michèle Cohen-Halimi in the program Les Chemins de la Philosophie, brodcast on France Culture on 10/09/2018)
+
+Listen to the podcast in French:
+https://www.radiofrance.fr/franceculture/podcasts/les-chemins-de-la-philosophie/suffit-il-d-etre-vertueux-pour-etre-heureux-1975199
+
+E1.2.A.3.2_REF1_PH WHAT PLACE FOR SENSIBILITY IN MORALITY? Kant's Critique of Practical Reason.
+"Sensibility is not the source of evil. Since morality is an act of freedom, evil must have its source in an act of freedom that really concerns me. Morality consists in the subordination of sensitivity to reason. But Kant says that without moral sensibility, man would be morally impotent. This is because the exclusion of sensibility from the foundation of morality produces a feeling of pain in us, because our inclinations spontaneously tend to want to impose themselves on our will. Morality does violence to sensibility and "humiliates" presumption - the self-love that claims to take the place of law. As finite beings, we cannot spontaneously agree with the law; our moral degree can only be that of virtue: we cannot be saints. A saint is someone who spontaneously agrees with the moral law - which, according to Kant, does not exist, but is merely an ideal.
+But with the humiliation of self-love by the moral law, man feels respect, which is a feeling of joy and "elevation" that raises us to the sublimity of our moral destiny. This respect is not the foundation of the moral law, but it is indeed reason that produces this feeling in us".
+(François Calori in the program Les Chemins de la Philosophie, brodcast on France Culture on 10/11/2018)
+
+Listen to the podcast in French:
+https://www.franceculture.fr/emissions/les-chemins-de-la-philosophie/critique-de-la-raison-pratique-de-kant-44-quelle-place-pour-la-sensibilite-dans-la-morale
+
+E1.2.A.4. "IS NOT A HAPPY LIFE WHAT ALL WILL, AND NO ONE ALTOGETHER WILLS IT NOT? where have they known it, that they so will it? where seen it, that they so love it? Truly we have it, how, I know not. Yea, there is another way, wherein when one hath it, then is he happy; and there are, who are blessed, in hope. These have it in a lower kind, than they who have it in very deed; yet are they better off than such as are happy neither in deed nor in hope. Yet even these, had they it not in some sort, would not so will to be happy, which that they do will, is most certain. They have known it then, I know not how, and so have it by some sort of knowledge, what, I know not, and am perplexed whether it be in the memory, which if it be, then we have been happy once; whether all severally, or in that man who first sinned, in whom also we all died, and from whom we are all born with misery, I now enquire not; but only, whether the happy life be in the memory?"
+(Saint-Augustin, Confessions, Book X, Chapiter XX)
+
+E1.2.A.5. "COULD IT BE THAT PURSUING HAPPINESS IS SELF-DEFEATING? Has the pursuit of happiness always been a major goal in life? Should it be?
+The pursuit of happiness through public policy was the goal of Stuart Mill and later of socialist movements, but then in the 1960s we went from a right to happiness to a duty to be happy. Because of :
+1. The consumer society claimed that we not only behaved as producers, but also as consumers - capitalism that ounce was based on asceticism became based on pleasure (see how brands put happiness in their slogan) and 
+2. the advent of the individualistic revolution - without any religion or social class determination, I am the only obstacle between myself and my happiness.  I have to work on myself to gain happiness which became a social goal (with the help of drugs, aesthetical surgeries, therapies and religions). Happiness now is a private matter in the western world. Aren't feelings and adventurous activities more important than happiness? Isn't the risk for those who pursue happiness to live a confined existence? Isn't living with risk and expansion more desirable?"
+(Pascal Bruckner on Happiness, Philosophy Bites)
+
+Listen to the episode: http://philosophybites.com/2011/04/pascal-bru.html
+
+E1.6.C.1.1.a_REF5.1.a_LIT.wE1.2.A. 
+
+E1.2.B. THE PURSUIT OF HAPPINESS: UNIVERSAL BUT HOPELESS? For thinkers like Pascal and Cioran, it's an illusion because our life on this earth is hopeless. The European Romantic movement also saw life as a burden, after the fall of Paradise Lost. For Lacan, who never believed in God, man is not fallen, but abandoned and orphaned by nature. As we saw in Part I, Freud conditions happiness on the pleasure principle and concludes that it is at odds with the way the world works. From then on, there are only more or less effective strategies for feeling happier or less happy. Is the game already lost?
+
+E1.2.B.1. "ALL MEN SEEK HAPPINESS. THIS IS WITHOUT EXCEPTION. WHATEVER DIFFERENT MEANS THEY EMPLOY, THEY ALL TEND TO THIS END.
+ The cause of some going to war, and of others avoiding it, is the same desire in both,
+attended with different views. The will never takes the least step but to this object. This is the motive of every action of every man, even of those who hang themselves." 
+ (Blaise Pascal, Les Pensées, 1670)
+
+... Hang yourself, molest yourself, whip yourself... everyone finds happiness in their own way.
+
+E1.2.B.2. THOSE FOR WHOM THE PURSUIT OF HAPPINESS IS ILLUSORY
+For Ecclesiastes [one of the ketuvim ("writings") of the Hebrew Bible and part of the wisdom literature of the Christian Old Testament], Blaise Pascal, and Cioran, happiness and the pursuit of happiness are illusory. In a way, the Romantics also adopt this line of thinking about a "lost paradise. For Lacan, who never believed in God, man is not fallen, but abandoned and orphaned by nature.
+
+E1.2.B.2.1. "BUT ON FURTHER CONSIDERATION, WHEN, AFTER FINDING THE CAUSE OF ALL OUR ILLS, I HAVE SOUGHT TO DISCOVER THE REASON OF IT, I have found that there is one very real reason, namely, the natural poverty of our feeble and mortal condition, so miserable that nothing can comfort us when we think of it closely."
+ (Blaise Pascal, Pensées, 1670)
+... Still, there's room for joy in Pascal's thought; a serious Pascal who can be joyful without staying that way for long.
+
+Musical Illustration: Benjamin Britten, Variation on a theme of Frank Bridge Op. 10: Variation 8: Funeral March
+
+Listen to it on YouTube: https://youtu.be/eWNBBipiBws?si=90nvO3Wkg3296Woy
+
+E1.2.B.2.1_REF1_PH THUS PASSES AWAY ALL MAN'S LIFE
+"They have a secret instinct which impels them to seek amusement and occupation abroad, and which arises from the sense of their constant unhappiness. They have another secret instinct, a remnant of the greatness of our original nature, which teaches them that happiness in reality consists only in rest, and not in stir. And of these two contrary instincts they form within themselves a confused idea, which hides itself from their view in the depths of their soul, inciting them to aim at rest through excitement, and always to fancy that the satisfaction which they have not will come to them, if, by surmounting
+whatever difficulties confront them, they can thereby open the door to rest.
+
+Thus passes away all man's life. Men seek rest in a struggle against difficulties; and when they have conquered these, rest becomes insufferable. For we think either of the misfortunes we have or of those which threaten us. And even if we should see ourselves sufficiently sheltered on all sides, weariness of its own accord would not fail to arise from the depths of the heart wherein it has its natural roots, and to fill the mind with its poison.
+
+Thus so wretched is man that he would weary even without any cause for weariness from the peculiar state of his disposition; and so frivolous is he, that, though full of a thousand reasons for weariness, the least thing, such as playing billiards or hitting a ball, is sufficient to amuse him."
+(Blaise Pascal, Pensées, 1670)
+
+E1.2.B.2.1_REF2_PH "WE DO NOT REQUIRE GREAT EDUCATION OF THE MIND TO UNDERSTAND THAT HERE IS NO REAL AND LASTING SATISFACTION; that our pleasures are only vanity; that our evils are infinite; and, lastly, that death, which threatens us every moment, must infallibly place us within a few years under the dreadful necessity of being for ever either annihilated or unhappy."
+(Blaise Pascal, Pensées, 1670)
+
+STILL OTHERS MANAGE TO LIVE JOYFULLY IN SPITE OF EXISTENTIAL LONELINESS.
+"INFINITE SILENCE
+
+ There was
+  (there is)
+an enormous silence
+before the birth of stars
+
+ before light
+
+ matter of matter
+
+from where everything comes incessant and where
+  everything is extinguished
+  eternally
+
+this silence
+ screams under our life
+ and from end to end
+ crosses it
+   strident"
+(Ferreira Gullar, Many Voices, 1999)
+
+E1.2.B.2.1_REF3_PH ESCAPE FROM FLEETING EXISTENCE TO THE BENEFIT OF AN ETERNAL BEING:
+"There is nothing more real than this, nothing more terrible. Be we as heroic as we like, that is the end which awaits the noblest life in the world. Let us reflect on this, and then say whether it is not beyond doubt that there is no good in this life but in the hope of another; that we are happy only in proportion as we draw near it; and that, as there are no more woes for those who have complete assurance of eternity, so there is no more happiness for those who have no insight
+into it.."
+(Blaise Pascal, Pensées, 1670)
+
+"We know that a long philosophical tradition, from Plato to Heidegger, has decided otherwise on this point, holding, on the contrary, that joy is truly accessible to man only by "transcending" the mere joy of living and by distancing oneself from any object situated in existence, however pleasing it may be. [The consequence seems to be that joy, if it does not consist in an illusory rejoicing that is quickly contradicted by its very object, can only consist in a mystical or metaphysical experience that has been well described by theologians and philosophers such as Pascal and Heidegger, or by Plato in the Phaedo, who compares the cry of the dying swan to a song of joy and liberation. More generally, such joy appears as an escape from the present in favor of a permanent "presence," an escape from fleeting existence in favor of an eternal being.
+(Clément Rosset, The major force, 1983)
+
+E1.2.B.2.1_REF4_PH STILL, THERE'S ROOM FOR JOY IN PASCAL'S THOUGHT; A SERIOUS PASCAL WHO CAN BE JOYFUL WITHOUT STAYING THAT WAY FOR LONG.
+Controlled madness and exultation:
+"Observation, resignation, more or less compensatory sublimation are here the words of pessimistic wisdom. The tragic intention - the true terrorist intention, as found in Lucretius, Montaigne, Pascal or Nietzsche - is different in all these respects. It is incapable of making a statement (except for the impossibility of a statement: a statement unique to tragic philosophy, which is not unimportant); and it seeks neither wisdom protected from illusion nor happiness protected from optimism. It seeks something quite different: controlled madness and exultation. Thus Pascal; on the one hand: "We are so necessarily mad that it would be madness by another turn of madness not to be mad"; on the other hand: "Joy, joy, tears of joy."" 
+(Clément Rosset, Logic of the Worst, 1971)
+
+E1.2.B.2.1_REF4.1_PH "PASCAL'S WAGER HAS AN EXISTENTIAL DIMENSION. WE DON'T MAKE OUR CHOICES THAT WAY. The existential aspect is that we're obliged to play because we're already engaged in life - it's a game that's being played, and we have to decide whether or not to interrupt it. For Pascal, if we stop the game, there is no party (in the sense of distribution): If you leave the game, you lose everything.
+To live with hope is not to waste one's life. You have nothing to lose, because by betting on future happiness, happiness is already present.
+Pascal's wager is therefore a question of present happiness. For Pascal, the real question is not "What am I willing to give up now in exchange for future happiness?" but rather "Am I willing to give up my hope?
+The wager implies a choice of life that preserves as possible an encounter that he himself experienced and recounts in the text of the Memorial.
+Happiness is no longer an abstraction: Grace is experienced as pleasure (even if there is little room for hedonism in Pascal)"
+(Pierre Schindler)
+
+In Eric Rohmer's Winter Tale, the character Félicie is caught up in a previous relationship. Despite the slim chance of finding Charles, she configures her life to prevent herself from doing things that would prevent her from finding him. Félicie has realized that she doesn't have to choose: her choice is not to choose.
+
+Watch the trailer: https://youtu.be/7KhvOF522W4?si=BlK48nHmMW5oJbsX
+
+E1.7.D.3.1_REF2_PH.wE1.2.B.2.1_REF4_PH
+
+E1.7.D.3.1_REF1_PH.wE1.2.B.2.1_REF4_PH
+
+E1.2.B.2.1_REF5_LIT "PASCAL
+
+[...] He tore himself clear of everything; of his own temperamental proclivities, of his pride, of his scientific vanity, of his human affections, of his lusts, of his innocent enjoyments. He tore himself clear of everything; so as to envisage the universe in its unmitigated horror, so as to look the emptiness of space straight between its ghastly lidless eyes.
+
+One sees him there, at the edge of the world, silhouetted against the white terror of infinity, wrestling desperately in the dawn with the angel of the withheld secret. [...]
+
+What Pascal does is a thing that, curiously enough, is very rarely done, even by great metaphysical writers; I mean the bringing home to the mind, without any comfortable illusive softenings of the stark reality, of what life really implies in its trenchant outlines. To do this with the more complete efficacy, he goes back to Montaigne and uses the scepticism of Montaigne as his starting point. [...]
+
+And after all, even supposing that Pascal is wrong; even supposing that making his grand wager he put his money upon the wrong horse, does that diminish the tragedy of his position? Does that lessen the sublimity of his imagination? [...]
+
+The sublimity of Pascal's vision depends upon its being illusive. The grandeur of his world logic depends upon its being false. The beauty of his heroic character depends upon his philosophy being a lie. [...]
+
+In the wise psychology of the future - interesting itself in the historic aberrations of the human mind - it is likely that many chapters will be devoted to this strange "disease of desperation" full of such wild and fatal beauty.
+
+The Spectacle of the world will lack much contrasting shadow when this thing passes away. A certain deep crimson upon black will be missing from the tapestry of human consciousness. There will be more sun-light but less Rembrantian chiaroscuro in the pigments of the great Picture. [...]"
+(John Cowper Powys, Suspended Judgments, 1916)
+
+E1.2.B.2.2. ALTERNATIVES TO DESPAIR: Pascal offers us an alternative to despair - the hope of an encounter with God - but Cioran, a disillusioned (fallen?) believer, has nothing left to hold on to, and yet a certain form of asceticism brings him back to life: "his ethos was that of a man of exercises, an artist who even managed to act with laziness - and showed an Apollonian discipline with despair, an execution of almost classical workmanship associated with letting go".
+
+E1.2.B.2.2_REF1_PH "CIORAN'S EXERCISES [...] Cioran rejects Nietzsche's acceptance of the unacceptable: for him, the superman is a fiction; who can speak of the eternal return of the same, when to exist, even once, is already once too many? [...] Cioran is a practitioner of a new kind, whose originality and representativeness are evident in the fact that his practice consists in the rejection of any practice oriented towards a goal. As we know, methodical exercises are only possible if we have a goal in mind that is imposed on us. It is precisely the authority of this goal that Cioran questions. To accept an exercise goal would be, once again, to believe, "believe" here referring to the mental action by which the novice anticipates the goal. [...] By practicing where there are no appropriate tools, the "anti-prophet" develops for himself an informal form of mastery. He becomes the first master of "achieving nothing. [...] By contributing to the discovery that even laissez-faire is capable of producing art and, if the will to power is added to it, also has an obligation to train. [The Précis de décomposition shows the extent to which Cioran was aware of his role in translating the spiritual habitus into profane discord. Originally, this collection of aphorisms was to be titled Exercices négatifs (Negative Exercises), which could mean either exercises in negation or anti-exercises. What Cioran presented was nothing less than a rule that would lead his followers down the path to uselessness. If this path had a goal, it would be called: "To be more useless than a saint..." [...]
+The process that Cioran developed for his anti-exercises is based on elevating idleness to a form of expression of existential rebellion. What he calls "idleness" is in fact a consciously organized drift, unhindered by any kind of structured work, through the changing moods of the manic-depressive spectrum [...]. The conscious life of drifting is tantamount to an amplification of discontinuity through the exercise of sensation, an amplification to which Cioran was predisposed by his mad character. The amplifying effect is further dogmatized by the aggressive thesis that continuity is a "crazy idea" - it would have been enough to call it an artificial construct. To exist now is to feel bad in ever-changing present moments. [...] The "negative exercises" of this Romanian "two-bit Buddhist"-as he describes himself in Syllogisms-are milestones in the recent history of spiritual behavior; [...] what he does and says always serves to elevate suffering to the level of skill that corresponds to it. Cioran's work appears much less contradictory when we perceive in its many paradoxes the emergence of the phenomenon of exercise-[...] he was, by his ethos, a man of exercises, an artist who even managed to make a performance out of laziness-and an Apollonian discipline with despair, an almost classical study in letting oneself go. [...]" 
+(Peter Sloterdijk, You Must Change Your Life, 2009)
+
+E1.2.B.2.2_REF1.1_PH "PARISIAN BUDDHISM [...] For half a century, Cioran wrote his memoirs in a garret, where he worked with admirable monotony on his single subject: how to go on when everything is missing and everything is too much. He understood early on that his fortune as a writer was to take up the mantle offered by Nietzsche - he slipped into it during his years in Romania and never took it off. Nietzsche interpreted metaphysics as a symptom of the suffering caused by the world, and as a charitable organization to help people escape it. Cioran accepted this diagnosis without making the slightest attempt to offer another. What he rejected was Nietzsche's flight in the opposite direction: the approval of the unapprovable. For him, the superman is a childish fiction, a pompous doorman who hangs his flag in the window while the world remains as unacceptable as ever. Who speaks of the eternal return of the same, when to exist, even once, is already once too many? [...] Cioran, as we have noted, is a key witness to the significant reversal, from the point of view of asceticism, that we treat as the emergence of anthropotechnics. Through him, we draw attention to the informalization of spirituality, which, as I said, must be understood as a counter-trend, complementary to the de-spiritualization of the ascetics. Cioran is a practitioner of a new type, whose originality and representativeness appear in the fact that his practice consists in the rejection of any practice oriented towards a goal. As we know, methodical exercises are only possible if we have a goal in mind that is imposed on us. It is precisely the authority of this goal that Cioran questions. Accepting a goal would mean, once again, believing, "believing" here referring to the mental action by which the novice anticipates the goal."
+(Peter Sloterdijk, You Must Change Your Life, 2009)
+
+E1.2.B.2.2_REF1.2_PH CIORAN'S WORK EXPLORES A FORM OF MASTERY IN MEANINGLESSNESS AND DISBELIEF
+"The anticipatory and believing advance toward perfection is not Cioran's concern. He is certainly passionately 'interested' in religious texts that speak of perfection and salvation, but he will not participate in the act of believing as such, in the anticipation of the future stage when we will have reached the same point. Cioran's disbelief therefore has two sides - that of powerlessness, because his basic tone undermines the naivety necessary to hypothesize completion, and that of reluctance, because he has adopted the attitude of a skeptic and does not want to abandon this definitive provisional state in favor of a position. He therefore has no choice but to experiment with what remains. He finds himself forced to play an instrument on which any training toward a specific goal would be absurd - the out-of-tune instrument of his own existence. But it is precisely through his playing on this unplayable instrument that the irrepressible universality of the dimension of practice becomes apparent: for by practicing where there is no suitable instrument, the "anti-prophet" develops for himself an informal form of mastery. He becomes the first master of "achieving nothing". [...]
+
+By contributing to the discovery that even recklessness is capable of producing art and, if the will to power is added to it, also has a duty to train, Cioran helped the order of holy mad recklessness to find a rule - it is preserved in the Précis de décomposition, that book of strange exercises which I would like to show to be, as a collection of undeclared ascetic practices, the true charter of modern "culture" - a book that bursts all bindings. This book, published in French and which established his reputation, shows the extent to which Cioran was aware of his role in translating the spiritual habitus into profane discord and its literary exploitation. Originally, this collection of aphorisms was to be called Exercices négatifs-which could mean either exercises in negation or anti-exercises. What Cioran presented was nothing less than a rule that would lead his followers down the path to uselessness. If this path had a goal, it would be called: "To be more useless than a saint..." [...]" 
+(Peter Sloterdijk, You Must Change Your Life, 2009)
+
+E1.2.B.2.2_REF1.3_PH CIORAN, A SKEPTIC FOCUSED ON THE FUTILITY OF STRIVING FOR PERFECTION, IRONICALLY FINDS A FORM OF MASTERY IN NAVIGATING HIS OWN FLAWED EXISTENCE, CONTRIBUTING TO A "CULTURE" OF EMBRACING USELESSNESS.
+"The process that Cioran develops for his anti-exercises is based on elevating idleness to a form of expression of existential rebellion. What he calls "idleness" is in fact a deliberately organized drift, unimpeded by any kind of structured work, through the changing moods of the manic-depressive spectrum-a process that anticipates the later magnification of drift, the wandering through the day, among the Situationists of the 1950s. The conscious life of drift is equivalent to an amplification through the exercise of the sense of discontinuity, an amplification to which Cioran was predisposed by his lunatic character. The amplifying effect is further dogmatized by the aggressive thesis that continuity is a "crazy idea" - it would have been enough to call it an artificial construct. To exist now is to feel bad in ever-changing present moments. [...]
+
+The "negative exercises" of this "two-bit Buddhist" - as he describes himself in Syllogisms - are milestones in the recent history of intellectual behavior; all that remains is to explain them as valid discoveries - beyond the camaraderie of moods that has characterized Cioran's reception so far. The skepticism attributed to the author in accordance with certain turns of his own language games is not "radical"; it is virtuoso, elegant. What Cioran practices may seem monotonous, but it does not lead to the stupor associated with radicalism. What he does and what he says always serves to elevate suffering to the level of skill that it deserves. Cioran's work appears much less contradictory when we perceive in its many paradoxes the emergence of the phenomenon of movement-once again, in Nietzsche's grand words, "one of the most widespread and persistent facts in the world" in its usual form. Even if he was, in his basic tone, a "passive-aggressive bastard," as group therapists sometimes put it in the 1970s, he was, in his ethos, a man of exercises, an artist who even managed to make a performance out of laziness - and an Apollonian discipline out of despair, an almost classical study out of letting oneself go."
+(Peter Sloterdijk, You Must Change Your Life, 2009)
+
+E1.2.B.2.2_REF2_PH THE MIRAGES THAT SO ENCHANTED CIORAN:
+"There is something in this son of a priest [Cioran], a brilliant writer and humorist, but one who, for my taste, too often sacrifices himself to the conformism of anti-conformism, a certain malicious pleasure in wanting to make his fellow men despair, not so much because of what life has always been and remains in itself (which, it seems to me, offers splendid compensations for its disastrous aspects), but rather in the name of the disappointment he feels when he realizes the "futility" of the great consoling hopes that were dangled before him in his tender and pious childhood, and whose various mirages had so astonished him that he (incapable of adapting to a new situation and of feeling the slightest sporting or playful enthusiasm for existence as it presents itself to ordinary mortals) can do no more than sigh after them, bitterly railing against this new trivial reality that he believes he has finally discovered, which is far from ever leading to the sanctimonious paradisiacal apotheosis in which he had so wanted to believe at the outset."
+(Denis Grozdanovitch, Dreamers and Swimmers, or Pleasure Among Difficulties, 2005)
+
+E1.2.B.2.2_REF2.1_PH "INCURABLE.—The idealist is incorrigible: if he be thrown out of his Heaven, he makes himself a suitable ideal out of Hell. Disillusion him, and lo! he will embrace disillusionment with no less ardour than he recently embraced hope. In so far as his impulse belongs to the great incurable impulses of human nature, he can bring about tragic destinies and later become a subject for tragedy himself, for such tragedies as deal with the incurable, implacable, inevitable in the lot and character of man."
+(Friedrich Nietzsche, Human, All Too Human II, Aphorism 23, 1878)
+
+E1.2.B.2.2_REF3_PH THE SCHOOL OF LIFE : EMIL CIORAN
+
+Watch it on YouTube :
+https://youtu.be/wMOM34XEi2k
+
+E1.2.B.2.3. WHAT COULD BE MORE APPEALING TO ME: to be eternal among the eternal, or mortal among mortals? In either case, I will always look just as miserable. – The same argument would also apply to the hypothesis of another world.
+"Once again, there is no real remedy: we can count on nothing and no one here; and, I would add, not even on God. Because theology, the appeal to God, is of no help in this case. This is a remarkable point, though to my knowledge it has hardly been noticed: that neither the God in whom Pascal believes nor the God in whom Cioran refuses to believe, even if they existed, would have anything to satisfy the demands of either of them. No doubt God, as the rational author of creation, would make my existence more necessary; but would that make it less futile? How would it improve my condition in the world, increase my place in time and space? And besides, what would I gain by seeing it increased? As Pascal repeats, more and less are indistinguishable in infinity. But, one might object, God is not content with increasing me: he tears me away from the order of space and time and promises me eternal life. Yes, but he also promises eternal life to an infinite number of others. How, then, is my destiny changed? There is only a change of scale, not a change of proportion. What would be more appealing to me to be eternal among the eternal than to be mortal among the mortal? In either case, I would still look just as miserable. The same argument would also apply to the hypothesis of another world, which is why any appeal for change and elsewhere, as Cioran sometimes ironically puts it after Baudelaire ("Give me another universe-or I will die"), is as futile and useless as an appeal to God."
+(Clément Rosset, La force majeure, 1983)
+
+E1.2.B.2.3_REF1_PH CUOGHI INTRODUCES US TO AN EXPERIMENTAL PROCESS OF SCULPTING MATTER, reflecting on the magical force of images, the power of repetition, and the iconographic memory of art history.
+
+The installation – a workshop set up for producing these sculptures from start to finish, from casting the organic material in a single mold all the way to the phase of fixation – does not cease to evolve with the opening of the show: it continues to unfold through decomposition and composition, death and regeneration.
+(Curator's Review of the Venice Biennal 2017, Italian Pavillion)
+
+In this account, observers have either entered his tomb before the third day of his entombment, during which Jesus ascends to heaven – the transfiguration miracle. Or, his body never ascended at all, and observers are merely acting on voyeuristic curiosity into the decay of human flesh, especially that of a savior, prophet, celebrity—whatever you want to call it. 
+(Whitney Jones)
+
+E1.2.B.2.4. THE WEIGHT OF LOST PARADISE IS SO HEAVY FOR THE ROMANTIC MOVEMENT THAT HAPPINESS IS IMPOSSIBLE. Happiness would even be naive, a sign of futility and the illusion of those who are incapable of feeling the weight of existence. An inescapable gravity-to be contrasted with Kundera's "unbearable lightness of being"?
+
+E1.2.B.2.5. "LACANIAN ANTHROPOLOGY IS PESSIMISTIC; IT SEES MAN AS A MISERABLE ANIMAL, PREMATURELY REDUCED TO IMPOTENCE, A RADICALLY ABANDONED AND ORPHANED CREATURE, INCAPABLE EVEN OF IDENTIFYING THE OBJECT OF HIS DESIRES, a discordant being, torn apart by imaginary captivities that dissociate him from himself, tormented by need and condemned to always hallucinate the satisfaction that eludes him. That is why, in the way we live our lives and in our political commitment, there is no choice between the disillusioned cynicism of the realist who has seen it all and the romantic naivety of the ingenuous who is lulled by utopias. And so, on the stage of human comedy, the left-wing intellectual is a fool, the clown who provides entertainment in the interludes of Shakespearean tragedy, an innocent, a simpleton, dressed in the garb of a buffoon; while the right-wing intellectual is more like the knave, the servant who excels in the role of the matchmaker, a "notorious rogue" who agrees to be a scoundrel because he has recognized the universal scoundrelism that rules the world."
+(Jacques Darriulat, Lacan, Ecouter la folie, V- Le Maître, 2019) 
+
+Read the full article in French: http://www.jdarriulat.net/Auteurs/Lacan/Ecouterlafolie/Ecouterlafolie5.html
+
+E1.2.B.2.5_REF1_TH "BEING A PSYCHOANALYST SIMPLY MEANS OPENING YOUR EYES TO THE OBVIOUS FACT THAT THERE IS NOTHING MORE CHAOTIC THAN HUMAN REALITY. If you think you have a well-adjusted, rational self that knows how to navigate, knows what to do and what not to do, and takes reality into account, then you need to get out of here. Psychoanalysis, in line with common experience, shows you that there is nothing more stupid than human destiny, namely that we are always deceived [...] It is not by chance, because it could be otherwise, that by some strange coincidence we go through life meeting only unhappy people. We tell ourselves that there must be happy people somewhere. Well, if you can't get that out of your head, then you haven't understood anything about psychoanalysis. That's what I call taking things seriously. 
+(Seminar III, The Psychoses, 1955-56)
+
+E1.2.B.2.5_REF2_TH "THE FOOL IS AN INNOCENT, A SIMPLETON, BUT OUT OF HIS MOUTH COME TRUTHS THAT ARE NOT ONLY TOLERATED BUT PUT INTO PRACTICE, because he is sometimes dressed in the garb of a fool. This happy shadow, this fundamental foolishness, is in my eyes what makes the leftist intellectual so valuable. I would like to oppose this qualification, for which the same tradition provides us with a strictly contemporary term, used in a conjugated form - I will show you, if we have time, the abundant and unambiguous texts - that of the knave. The knave can be translated, on a certain level of usage, as a servant, but it is something that goes further. It is not the cynic, with all the heroism that position implies. It is, strictly speaking, what Stendhal calls the coquin fieffé, that is, after all, Monsieur Tout-le-Monde, but a Monsieur Tout-le-Monde with more determination. Everyone knows that a certain way of presenting oneself, which is part of the ideology of the right-wing intellectual, is precisely to pose as what one really is, a scoundrel, in other words, not to shy away from the consequences of what is called realism, that is, to admit, if necessary, that one is a scoundrel". 
+(Seminar VII, The Ethics of Psychoanalysis, 1959-60, session of May 23, 1960)
+
+E1.2.B.2.6. "VANITY OF VANITIES, - SAYS SOLOMON, - VANITY OF VANITIES, ALL IS VANITY! What benefit does man get from all the work he does under the sun? One generation passes away and another generation comes; but the earth always stands firm and what has been is what will be; what has been done is what will be done, and there is nothing new under the sun. Is there anything of which one can say, « - Look, this is new? »  It has been in the centuries before us. The things that have gone before are not remembered; neither will the things that are to come be remembered in the future. I, the Cleric, was king over Israel in Jerusalem, and I applied my heart to searching and probing with wisdom all that was done under the heavens, which is an untoward occupation that God has given to men to occupy themselves with. I have looked into all that is done under the sun, and behold, it is all vanity and torment of mind. I spoke in my heart, and said, Behold, I have grown and increased in wisdom above all that were before me in Jerusalem, and my heart hath seen much wisdom and knowledge; and I have applied my heart to know wisdom and to know error and folly; but I have known that this also is torment of spirit; for where there is abundance of knowledge, there is abundance of sorrow; and he that increaseth with knowledge increaseth with sorrow.
+I said in my heart, « - Come, let me test you now with joy and enjoy the good »; but behold, this also is vanity. I said concerning laughter, « - It is foolish, » and concerning joy, « - What is it for? » I sought in my heart to treat myself gently, and yet let my heart apply itself to wisdom and understand what folly is, until I saw what it is good for men to do under heaven during the days of their life."
+(The Eclesiaste quoted by Leo Tolstoy in My Confession: The Search for Answers to Deep Questions, 1882)
+
+E1.2.B.3. FREUD CONDITIONS HAPPINESS ON THE PLEASURE PRINCIPLE AND CONCLUDES THAT IT IS AT ODDS WITH THE WAY THE WORLD WORKS.
+"We will therefore turn to the less ambitious question of what men themselves show by their behaviour to be the purpose and intention of their lives. What do they demand of life and wish to achieve in it? The answer to this can hardly be in doubt. They strive after happiness; they want to become happy and to remain so. This endeavour has two sides, a positive and a negative aim. It aims, on the one hand, at an absence of pain and unpleasure, and, on the other, at the experiencing of strong feelings of pleasure. In its narrower sense the word ‘happiness’ only relates to the last. In conformity with this dichotomy in his aims, man's activity develops in two directions, according as it seeks to realize —in the main, or even exclusively—the one or the other of these aims. As we see, what decides the purpose of life is simply the programme of the pleasure principle. This principle dominates the operation of the mental apparatus from the start. There can be no doubt about its efficacy, and yet its programme is at loggerheads with the whole world, with the macrocosm as much as with the microcosm. There is no possibility at all of its being carried through; all the regulations of the universe run counter to it. One feels inclined to say that the intention that man should be ‘happy’ is not included in the plan of ‘Creation’. What we call happiness in the strictest sense comes from the (preferably sudden) satisfaction of needs which have been dammed up to a high degree, and it is from its nature only possible as an episodic phenomenon. When any situation that is desired by the pleasure principle is prolonged, it only produces a feeling of mild contentment. We are so made that we can derive intense enjoyment only from a contrast and very little from a state of things. (1)
+Thus our possibilities of happiness are already restricted by our constitution. Unhappiness is much less difficult to experience. We are threatened with suffering from three directions: from our own body, which is doomed to decay and dissolution and which cannot even do without pain and anxiety as warning signals; from the external world, which may rage against us with overwhelming and merciless forces of destruction; and finally from our relations to other men. The suffering which comes from this last source is perhaps more painful to us than any other. We tend to regard it as a kind of gratuitous addition, although it cannot be any less fatefully inevitable than the suffering which comes from elsewhere."
+(Sigmund Freud, Civilization and its Discontents, 1930)
+
+Note:
+(1) Goethe, indeed, warns us that ‘nothing is harder to bear than a succession of fair days.’
+[Alles in der Welt lässt sich ertragen, Nur nicht eine Reihe von schönen
+Tagen.
+(Weimar, 1810-12.)
+But this may be an exaggeration.
+
+Listen to the song A Felicidade by Tom Jobim: Tristeza não tem fim, feliciade sim [Sadness has no end, happiness does]
+https://youtu.be/sTi1AMyPWQE?si=DmzlDKOVHuG9ozJZ
+
+Listen to the spectacular transcription by Stephanie Jones:
+https://youtu.be/1bboT2qzd7Y?si=iN3sG4lHVWYaYbND
+
+E1.2.B.4. ARE THERE NOT INCONSOLABLE MISFORTUNES? Let us be realistic: do we not live in a world of chaos and chance in which we suffer inconsolable misfortunes? In such a world, is it reasonable to seek happiness? Is there a wisdom of despair for the ultra-clear-sighted... and a consolation for those who are not yet so clear-sighted?Freud conditions happiness on the pleasure principle and concludes that it is at odds with the way the world works.
+
+E1.2.B.4.1. ARE THERE NOT INCONSOLABLE MISFORTUNES?
+"If our love were directed not to the unique, inestimable, and priceless essence of the beloved, but to the epithets, adjectival modality, and superficial mannerisms of the beloved, our love would be nothing but esteem, and the 'beloved' of such 'love' would be easily replaced; if the beloved were loved for something other than themselves, for example, for the qualities of their intelligence, for something conceptual and formal, their disappearance would be easily compensated for: for everything abstract is interchangeable with everything abstract. Anyone else would do just as well in this multitude of random specimens! The stoic consolation that reintegrates my grief into the universal order subsumes the tragedy of death into impersonal categories: all people must die sooner or later; and you are not the only mother in the world who has lost a child; and you will have another, more beautiful and more successful... Alas! where does all this splendid wisdom come from, all this Seneca for Spartan widows, which does not dry the tears of the greatest sorrow in the world [...] Such is the ineffective and cruelly inoperative nature of the help that the Comforter brings to our inconsolable personal grief. The inconsolable person who suffers for the irreplaceable is therefore, to a certain extent, reasonably desperate. It is not a child in general that the grieving mother demands, not even another child like the little one who died: no, it is precisely the little one who died that she needs, that one and no other".
+(Vladimir Jankélévitch, Les vertus et l'amour, 1970)
+
+E1.2.B.4.1_REF1_CUR THIS WOODEN CHEST OF DRAWERS COULD BE THAT OF OUR MOTHER, OUR DECEASED GRANDMOTHER.After they are gone, we keep the furniture at home, but it is now weighed down by our mourning for the loved one. Doris Salcedro illustrates this weight of mourning by filling a series of furniture with concrete. The drawers, now sealed, illustrate the irremediably lost access to the materiality of the dead such as her smell and body to which we had access by smelling and touching the clothes she stored there when alive.
+
+E1.2.B.4.1_REF2_CUR A STRONG WIND SWEEPS ACROSS A SOLITARY FEMALE FIGURE IN A MELANCHOLY NOCTURNAL LANDSCAPE of olive-green soil and Prussian blue sky. The atmosphere is cold and inhospitable, as much in its colors as in the representation of the weather, with the wind blowing the figure’s long, wavy brown hair off the canvas (which also anchors the composition to the painting’s edge). The figure has her back to the viewer, and she is dressed in pink; we do not see her face, but the shape of her body — like a teardrop — suggests her state of mind. She seems to stare into the infinity of the landscape, occupied by four green elements, fantastic vertical vegetation that had already announced itself in previous works. such as Distância (1928), Sol poente [Sunset], and Floresta (1929). The eight luminous paintings of the artist’s most prolific year, 1929 — masterpieces such as Antropofagia, Floresta, Cartão-postal, Cidade (A rua)], Sol poente, and Idílio — are succeeded in 1950 by this solitary painting done in dark tones. Sunset is a kind of antithesis of Composition. The radiant, splendid setting sun of 1929 would be followed by the melancholy of Lonely Figure. In fact, Composição (Figura só), which can be considered a self-portrait, stands out from Tarsila’s other work, both of previous and of later years; not by chance it is the only painting she made in 1930; Tarsila also produced three drawings that year, all studies, for this work. The year of 1930 marked a turning point in the life of the artist, the country, and the world. In 1929, Tarsila’s family of wealthy coffee farmers lost their fortunes in the international financial crisis triggered by the collapse of the New York Stock Exchange in October. In 1930, a coup d’état put an end to Brazil’s Old Republic, plunging the country into the so-called Vargas Era, in reference to Getúlio Vargas (1882-1954), who would govern Brazil until 1945. In the same year. 1930, Tarsila lost her husband and intellectual partner, Oswald de Andrade (1890-1954), who left her for Pagu, the \/VTÍter Patrícia Rehder Galvão (1910-1962), in a scandal that shocked São Paulo society. Nothing would be as it had been before. 
+(MASP curator’s review, 2019)
+
+E1.2.B.4.2. IS IT POSSIBLE TO BUILD HAPPINESS IN A WORLD OF CHAOS?
+"Chorus Song 
+
+THE CHORUS:
+Poor generations of men, I see nothing but nothingness in you! 
+Who is this man who gains more happiness than is necessary to appear happy, and then, as soon as this appearance is given, disappears from the horizon?
+
+With your fate as an example, your fate, O unhappy Oedipus, I can no longer judge anyone among men to be happy.
+
+He had aspired to the highest, he had become the master of complete happiness.
+
+He had destroyed, O Zeus, the prophetess with the sharp claws. He had stood before our city like a rampart against death.
+
+And so, Oedipus, you were proclaimed our king, you received the highest honors, you reigned over mighty Thebes. [...]
+
+End of chorus 
+
+THE MESSENGER: [...] 
+
+Disaster has struck, not through his fault alone, but through the fault of both: it is the common disaster of woman and man. Their former happiness was yesterday happiness in the true sense of the word; today, on the contrary, there is weeping, disaster, death, and shame; every kind of sorrow that has a name is now to be found here; not one is missing!"
+(Sophocles, Oedipus Rex)
+
+E1.2.B.4.2_REF1_LIT “BETTER NEVER TO HAVE BEEN BORN (mê phunai), laments the chorus, and if we must see the light of day, it is best to return as quickly as possible to where we came from.”
+(Sophocles, Oedipus at Colonus, v. 1225-1227)
+
+E1.2.B.4.3. "WHAT DOESN'T KILL ME MAKES ME STRONGER."
+Suffering can help us "see better" by making us more attentive to reassuring rhetoric.
+The difference between Nietzsche's vision and Boris Cyrulnik's concept of resilience is that resilience is presented as a phenomenon accessible to most people, whereas Nietzsche's superhuman is an almost unattainable ideal. The metaphor of resilience as a shock that is absorbed may not be very Nietzschean - he might use other images such as healing or a sting.
+
+"Survival is not the most important term in this formula. Nietzsche is a thinker of the will to power, a hypothesis introduced in Thus Spoke Zarathustra and then generalized in Beyond Good and Evil. One of the implications of this hypothesis is that forces always tend to intensify and not simply to preserve themselves; the logic of self-preservation is always a temporary exception to that of intensification... This exception exists, certain organisms find themselves having to fight for their survival, but in Nietzsche's view this is exceptional, and it is one of the criticisms he makes of Darwin". 
+(Emmanuel Salanskis) 
+Nietzsche sees the body-mind as monistic, with no dualism between the two. In this framework, the will to power is strengthened when it succeeds in interpreting the resistance it encounters. Only great pain "deepens" when one is able to do intellectual/spiritual work on it. Giving meaning to suffering is a way of making it bearable (at the end of The Genealogy of Morals). Nietzsche wants to give suffering a different meaning from the one given by Judeo-Christian morality.
+We must remember Nietzsche's aristocratic view - the aphorism from Twilight of the Idols, "What does not kill me makes me stronger," does not apply to everyone - most sick people are decadent, prisoners of the morbid values of their time. He is capable of this. How are we to respond to suffering? With guilt or Judeo-Christian compassion? Or by questioning the values that are partly responsible for this suffering - or at least aggravate it? That would be Nietzsche's answer.
+
+"That which does not kill me makes me stronger."
+There is a tragic Dionysian joy in Nietzsche that calls for the affirmation of the eternity of life beyond the limits of individuality, through the individual's dispossession of himself. This implies a change of temporal scale, beyond the fate of the individual. For Nietzsche, complete liberation requires the questioning of the very notion of identity, which is largely a grammatical fiction when one is immersed in a stable society that maintains this fiction - in fact, there is only a flow that crystallizes at certain moments.
+(Emmanuel Salanskis on the radio program Les Chemins de la Philosophie, broadcast on France Culture on September 11, 2019) 
+
+Listen to the podcast in French: https://www.franceculture.fr/emissions/les-chemins-de-la-philosophie/quatre-malentendus-nietzscheens-34-ce-qui-ne-me-tue-pas-me-rend-plus-fort
+
+E1.2.B.4.4. "Pulitzer-winning poet Galway Kinnell (February 1, 1927–October 28, 2014) addressed this elemental question of existence with extraordinary compassion and spiritual grace in a poem he wrote for a student of his who was contemplating suicide after the abrupt end of a romance"
+(Maria Popova, Brain Pickings)
+
+"WAIT
+
+Wait, for now.
+Distrust everything, if you have to.
+But trust the hours. Haven’t they
+carried you everywhere, up to now?
+Personal events will become interesting again.
+Hair will become interesting.
+Pain will become interesting.
+Buds that open out of season will become lovely again.
+Second-hand gloves will become lovely again,
+their memories are what give them
+the need for other hands. And the desolation
+of lovers is the same: that enormous emptiness
+carved out of such tiny beings as we are
+asks to be filled; the need
+for the new love is faithfulness to the old.
+
+Wait.
+Don’t go too early.
+You’re tired. But everyone’s tired.
+But no one is tired enough.
+Only wait a while and listen.
+Music of hair,
+Music of pain,
+music of looms weaving all our loves again.
+Be there to hear it, it will be the only time,
+most of all to hear,
+the flute of your whole existence,
+rehearsed by the sorrows, play itself into total exhaustion."
+(Galway Kinnell,  Mortal Acts, Mortal Words, 1980)
+
+
+Read it in The Marginalian: https://www.themarginalian.org/2016/05/16/wait-galway-kinnell/?mc_cid=b035335510&mc_eid=0b6483decb
+
+E1.2.B.4.5. "WHEN WE EXPERIENCE TOO GREAT A MISFORTUNE, we are 'stunned': the brain cannot process the information. Either we remain trapped in our misfortune, which is post-traumatic stress disorder, or we struggle to get back to life, which is resilience. We are only conditioned by misfortune if we choose to remain trapped in it. Clinical practice proves that resilience is possible after the most traumatic experiences."
+(Boris Cyrulnik on the radio program Sous le soleil 1/4: "La nuit, j'écrirai des soleils" in Les chemins de la philosophie, broadcast on France Culture on June 24, 2019)
+
+E1.2.B.4.5_REF1_LIT "OPTIMISM
+More and more I have come to admire resilience.
+Not the simple resistance of a pillow, whose foam
+returns over and over to the same shape, but the sinuous
+tenacity of a tree: finding the light newly blocked on one side,
+it turns in another. A blind intelligence, true.
+But out of such persistence arose turtles, rivers,
+mitochondria, figs — all this resinous, unretractable earth."
+(Jane Hirshfield, Each happiness ringed by lions)
+"When we experience too much misfortune, we are « dazed »: our brain cannot process the information. Either we remain a prisoner of misfortune - this is the post-traumatic syndrome - or we struggle to resume living: this is resilience. We are conditioned by misfortune only if we decide to be locked into it. Clinical practice proves that resilience is possible even after the most traumatic experiences."
+(Boris Cyrulnik)
+
+E1.2.B.4.5_REF1.1_LIT  "WE CANNOT REMAIN INSENSITIVE AT THE SIGHT OF A TREE ON THE MOUNTAIN BEATEN BY THE WIND: this spectacle reminds us of human beings, of the pain of our condition, of a host of sad ideas. It is precisely because of the spectacle's simplicity that the imagination is moved. The impression is deep and yet the expressive capability of the tree bending under the storm is insignificant! Our being shudders with a primitive sympathy. In front of this spectacle, we understand that pain is in the cosmos, that struggle is in the elements, that the wills ofdifferent beings are contrary, that rest is only an ephemeral good. The suffering tree sets a maximum standard to universal pain."
+(Theodore Jouffroy)
+
+E1.2.B.4.5_REF2_PO  "WE GROW ACCUSTOMED TO THE DARK —
+When Light is put away —
+As when the Neighbor holds the Lamp
+To witness her Good bye —
+
+A Moment — We Uncertain step
+For newness of the night —
+Then — fit our Vision to the Dark —
+And meet the Road — erect —
+
+And so of larger — Darknesses —
+Those Evenings of the Brain —
+When not a Moon disclose a sign —
+Or Star — come out — within —
+
+The Bravest — grope a little —
+And sometimes hit a Tree
+Directly in the Forehead —
+But as they learn to see —
+
+Either the Darkness alters —
+Or something in the sight
+Adjusts itself to Midnight —
+And Life steps almost straight."
+(Emily Dickinson, 1862)
+
+We Grow Accustomed to the Dark: Emily Dickinson’s Stunning Ode to Resilience, Animated. 
+Watch it on Vimeo: https://vimeo.com/139463445
+
+E1.2.B.4.5_REF3_LIT "WE ARE IN THE HABIT OF IMAGINING OUR LIVES TO BE LINEAR, a long march from birth to death in which we mass our powers, only to surrender them again, all the while slowly losing our youthful beauty. This is a brutal untruth. Life meanders like a path through the woods. We have seasons when we flourish and seasons when the leaves fall from us, revealing our bare bones. Given time, they grow again. [...]
+Here is another truth about wintering: you’ll find wisdom in your winter, and once it’s over, it’s your responsibility to pass it on. And in return, it’s our responsibility to listen to those who have wintered before us. It’s an exchange of gifts in which nobody loses out. This may involve the breaking of a lifelong habit, one passed down carefully through generations: that of looking at other people’s misfortunes and feeling certain that they brought them upon themselves in a way that you never would. This isn’t just an unkind attitude. It does us harm, because it keeps us from learning that disasters do indeed happen and how we can adapt when they do. It stops us from reaching out to those who are suffering. And when our own disaster comes, it forces us into a humiliated retreat, as we try to hunt down mistakes that we never made in the first place or wrongheaded attitudes that we never held. Either that, or we become certain that there must be someone out there we can blame. Watching winter and really listening to its messages, we learn that effect is often disproportionate to cause; that tiny mistakes can lead to huge disasters; that life is often bloody unfair, but it carries on happening with or without our consent. We learn to look more kindly on other people’s crises, because they are so often portents of our own future."
+(Katherine May, Wintering: The Power of Rest and Retreat in Difficult Times)
+
+E1.2.B.4.5_REF4_LIT "FAIRY TALES MAKE US, CHILDREN AND GROWN CHILDREN ALIKE, KINDER AND MORE RESILIENT by grounding us in the knowledge — a primal knowledge we unlearn as we grow up and grow frightened of feeling — that the terrible and the transcendent spring from the same source, that our capacity for sorrow and our capacity for love spring from the same source, that the measure of life’s beauty and magic is not the absence of terror and tumult but the presence, persistence, and grace with which we face reality on its own terms."
+(Maria Popova, The Marginalian, 2022)
+
+E1.2.B.4.5_REF5_CUR  IN THIS DARKNESS, THERE IS A WHITE LIGHT AS BRIGHT AS THAT REFLECTED IN THE PUPIL OF THE EYE
+"In her work, Yael Martínez (Mexico, 1984) often explores the effects of poverty and organized crime in Guerrero, one of Mexico's most deprived and violent states. organized crime in Guerrero, one of Mexico's most deprived and violent states.
+The project Luciérnaga (2019) - "firefly," in free translation - is defined by the artist as "an essay on the resilience of those who have been touched by violence at some point in their lives." The photographs are perforated with microholes that allow a strong white light to shine through from behind the image.
+"In this darkness, there is a white light as bright as that reflected in the pupil of the eye," says the artist. "The earth and the body suffer from fatigue, and the weight of the days is felt on the faces; on the skin is the mark of dead time, of that which has no name, which transforms the long days into the shadows of the night."
+(Curator of the exhibition Still there is night at Itaú Cultural, 2019)
+
+E1.3.C.2_REF1_PH.wE1.2.B.4.
+
+E1.2.C. HAPPINESS, AN INDIVIDUAL MATTER?
+Happiness, an individual matter. Isn't it because there is no single definition of happiness that some people conclude that it is unattainable? If we define it as an individual matter, this difficulty is lessened - but we still need to be able to imagine our own happiness and align it with our desires. This is a difficult task, which is perhaps why the concept of standardized happiness is still so prevalent - even in the U.S. Constitution and in utilitarian and Marxist logic. When we are unable to say what makes us happy, we ask the state to define it...
+
+A_Jean Arp_Human Concretion_1934_(1) ; A_Jean Arp_Human Concretion_1934_(2)
+E1.2.C.1. HAPPINESS
+In antiquity, philosophers agreed that there was such a thing as human nature, although they had different views about what it was. Christianity had then sealed its definition of human nature. The "subjective turn" can be dated to the end of the Renaissance with Hobbes and Locke. While we have desires, there is no possible sense of completeness, or an attainable perfection, but each one should pursue his own subjective preference. This line of thinking derives from the fact there is less agreement in this period about what is human nature, and if there is one.
+(In Our Time, BBC4, Broadcast on Thu 24 Jan 2002)
+
+Listen to the podcast in full: https://www.bbc.co.uk/programmes/p005489g
+
+E1.2.C.1.1. "WHEN IT COMES TO A HAPPY LIFE, THERE IS NO POINT IN COUNTING VOTES and saying, 'This is the choice of the majority. For that is precisely the wrong choice. Human affairs are not so well ordered that what is best pleases the greatest number: the crowd is the criterion of the worst. Let us seek that which is best, not that which is popular; that which brings us eternal happiness, not that which has the approval of the vulgar, the worst interpreters of truth. By 'vulgar' I mean men in chlamydes [simple linen robes] as well as those who wear crowns.
+(Seneca, The Happy Life)
+
+E1.2.C.1.2. THERE IS AN INDIVIDUAL HAPPINESS TO BE FOUND.
+"A few theses.—We ought not to give to the individual, in as far as he wishes for his own happiness,
+any precepts for the road to happiness; for individual happiness springs from particular laws unknown to everybody, outside precepts could only prevent or check it. The precepts, which are called moral, are, in reality, directed against the individual, and do not in the least tend to their happiness. Equally slight
+is the relationship of these precepts to the “ happiness and welfare of mankind ” ; words with which it is
+altogether impossible to associate definite notions; much less could we use them as guiding stars on the dark ocean of moral aspirations. It is not true that morality, so says prejudice, is more favourably inclined towards the development of reason than immorality. It is not true that the unconscious goal in the development of every conscious being (animal, man, mankind, etc.), is his “ greatest happiness.” On the contrary, at every step of our development we may gain a special and incomparable happiness, one that is neither superior nor inferior, but indeed a peculiar happiness. Development does not aim at happiness, but at development and nothing else. Only if mankind possessed a universally accepted goal, could we propose: “ This or that ought to be our line of action ” ; for the present there is no such goal. Hence we ought not to bring the requirements of morals into any relation whatever to mankind, which would be irrational and childish. To recommend a goal to mankind is quite a different thing; in this case the goal is put as something which lies with us; suppose that mankind would agree to such a recommendation, they might then impose on themselves a moral law at their own free will. But,.up to now, the moral law was to rise supreme above discretion; they did not really want to set up this law
+for themselves, hut to take it from somewhere, or to find it somewhere, or have it ordered from somewhere."  
+(Friedrich Nietzsche, The dawn of day, aphorism 108, 1881)
+
+E1.2.C.1.3. "IT SEEMS THAT NATURE — OR IF YOU WILL, THE PROCESS OF EVOLUTION — HAS ENDOWED EVERY LIVING BEING WITH THE WISH TO LIVE, and whatever he believes to be his reasons are only secondary thoughts by which he rationalizes this biologically given impulse. […]
+That we want to live, that we like to live, are facts that require no explanation. But if we ask how we want to live — what we seek from life, what makes life meaningful for us — then indeed we deal with questions (and they are more or less identical) to which people will give many different answers. Some will say they want love, others will choose power, others security, others sensuous pleasure and comfort, others fame; but most would probably agree in the statement that what they want is happiness. This is also what most philosophers and theologians have declared to be the aim of human striving. However, if happiness covers such different, and mostly mutually exclusive, contents as the ones just mentioned, it becomes an abstraction and thus rather useless. What matters is to examine what the term “happiness” means…"
+(Erich Fromm, The Art of Being, 1989)
+
+E1.2.C.2. HOWEVER, WE MUST EACH BE ABLE TO IMAGINE OUR OWN HAPPINESS, that is, to become aware of our desires and pursue them within the framework of our ethics.
+
+"Our desire is incurable."
+(Teresa of Ávila, 1515-1582)
+
+E1.2.C.2.1. WHAT GOOD WOULD A GENIE IN A BOTTLE BE IF WE WERE UNABLE TO FORMULATE THE WISH THAT WOULD MAKE US HAPPY?
+"The human tragedy is not the absence of an assignable destiny or an accessible happiness, but the very impossibility of imagining any end, any happiness: 'Let our minds carve and sew as they please, they cannot desire only what is theirs and be satisfied,' says Montaigne in the Apology of Raimond Sebond. If there were a god of happiness, and if he were a mystic, his task would be easy: to be sure of never having to grant anything, he would only have to announce to men that he was ready to grant them any happiness imaginable, provided that they first describe it to him". 
+(Clément Rosset, Logic of the Worst, 1971)
+
+E1.2.C.2.2. "I PROPOSE THAT THE ONLY THING ONE CAN BE GUILTY OF, AT LEAST FROM AN ANALYTIC PERSPECTIVE, IS TO HAVE GIVEN IN TO ONE'S DESIRES" (Jacques Lacan).
+What analysis offers to those who agree to embark on the adventure is not the illusion of endless, unclouded pleasure, but the demand for uncompromising clarity.
+(Jacques Darriulat) 
+
+"The escalation of pleasure that reigns through the narcissistic individualism that has become the contemporary norm - a law that commands us to enjoy more and more - is more deceptive than the law that censored desire, Since desire censors itself to the extent that it does not destroy itself in enjoyment, and since the law, as Saint Paul teaches, does not repress desire at all, but rather awakens it to the sense of its power, it makes the surplus of enjoyment recognize its finiteness by knowing the limit that methodically exhausts it. For by increasing your pleasure, you will increase your pain, which is precisely the part of emptiness that is never excluded.
+What are we to conclude? We know the only article that sums up the ethics of psychoanalysis: "I propose that the only thing one can be guilty of, at least from an analytic perspective, is to have given in to one's desire". This "never give in to your desire" is often interpreted as an unconditional imperative of enjoyment, in line with the slogan written on the walls in 1968: "Enjoy without restraint. But this is not at all what Lacan means. Enjoyment is not desire; it is, in fact, the exact opposite, since it is undifferentiation-there are no distinct elements within the totality, otherwise the totality would be divisible, and therefore no longer one, nor, as a result, total-the undifferentiation in which desire is annihilated. If desire is vital tension, jouissance, on the other hand, obeys the death instinct. Not to renounce desire, not to give in to desire, is therefore not to renounce the truth of desire, a truth that is precisely the object of the analytic quest. If there is an ethic of analysis, it is in the sense that it will never resign itself to lying to itself about the nature of its desire, that it will never renounce recognizing the origin and structure of its desire, that it will not tell itself fairy tales, whether they are [....] consecrated by conformism and the myth of marital bliss, or that, apparently more rebellious but in truth just as gregarious, of the perpetual orgasm of a jouissance that has become the object of fruitful commerce, the surplus value that now appears on the market stage only always disguised in the mask of surplus jouissance. What analysis offers to those who agree to embark on the adventure is not the lure of endless, unclouded pleasure, but the demand for uncompromising clarity.
+(Jacques Darriulat, Lacan, Listening to Madness, 6 - Desire)
+
+Read the full essay in French: http://www.jdarriulat.net/Auteurs/Lacan/Ecouterlafolie/Ecouterlafolie6.html
+
+"I PROPOSE THAT THE ONLY THING ONE CAN BE GUILTY OF, AT LEAST FROM AN ANALYTIC PERSPECTIVE, IS TO HAVE GIVEN IN TO ONE'S DESIRES. Whether or not this proposition is acceptable in any particular ethical system, it expresses quite well what we observe in our experience. Ultimately, what the subject actually feels guilty about when they feel guilty, whether it is acceptable to the director of conscience or not, is always the fact that they have given in to their desire. Let's take this further. He has often given in to his desire for the right reason, and even for the best [...] To do things for the sake of the good, and even more for the sake of the good of others, is far from protecting us not only from guilt, but also from all kinds of inner disasters. In particular, it certainly does not protect us from neurosis and its consequences. If analysis has any meaning, desire is nothing but the support of the unconscious theme, the very articulation of that which roots us in a certain destiny, which insistently demands that the debt be paid, and it returns, it comes back, and it always brings us back in a certain wake, in the wake of what is really our business". 
+(Jacques Lacan, Seminar VII, The Ethics of Psychoanalysis, 1959-60).
+
+E1.2.C.2.2_REF1_MU “MY ANGEL, I HATED YOU
+I let you love others besides me 
+A little further away than here
+
+My angel, I betrayed you
+So many nights in bed
+That my heart stopped
+Giving me life
+So far away from me
+So far from me
+So far from me
+
+Unusual armies
+And ambiguous shadows
+Sons who are mocked
+And women we leave behind
+Outdated sadness
+Misfortunes we forget
+Nails slightly blackened
+Nails slightly blackened
+
+My angel, I punished you 
+By sacrificing myself so much 
+Idolized icon 
+Filth in the night
+
+My angel, I hated you 
+I let you kill 
+Our youth, barely beginning 
+The rest of our lives
+So far from me
+So far from me
+
+So far from me
+
+So far from me
+
+Unusual armies
+And ambiguous shadows 
+Sons who are mocked 
+And women we leave behind
+Outdated sadness
+Misfortunes we forget 
+Nails slightly blackened 
+Nails slightly blackened 
+
+My angel, I hated you
+
+My angel, I hated you
+
+My angel, I hated you
+
+My angel, I hated you
+
+My angel, I hated you”
+(Alain Bashung, So many nights, Petrol Blue, 2008)
+
+
+"Mon ange, je t'ai haïe 
+Je t'ai laissée aimer d'autres que moi 
+Un peu plus loin qu'ici
+
+Mon ange, je t'ai trahie
+Tant de nuits alité
+Que mon coeur a cessé
+De me donner la vie
+Si loin de moi
+Si loin de moi
+Si loin de moi
+
+Des armées insolites
+Et des ombres équivoques
+Des fils dont on se moque
+Et des femmes que l'on quitte
+Des tristesses surannées
+Des malheurs qu'on oublie
+Des ongles un peu noircis
+Des ongles un peunoircis
+
+Mon ange, je t'ai punie 
+À tant me sacrifier 
+Icône idolâtrée 
+Immondices à la nuit
+
+Mon ange, je t'ai haiz 
+Je t'ai laissée tuer 
+Nos jeunesses ébauchées 
+Le reste de nos vies
+Si loin de moi
+Si loin de moi
+
+Si loin de moi
+
+Si loin de moi
+
+Des armées insolites
+Et des ombres équivoques 
+Des fils dont on se moque 
+Et des femmes que l'on quitte
+Des tristesses surannées 
+Des malheurs qu'on oublie 
+Des ongles un peu noircis 
+Des ongles un peu noircis 
+
+Mon ange, je t'ai haïe
+
+Mon ange, je t'ai haïe
+
+Mon ange, je t'ai haïe
+
+Mon ange, je t'ai haïe
+
+Mon ange, je t'ai haïe"
+(Alain Bashung, Tant De Nuits, Bleu Pétrole, 2008)
+
+Listen to the song on Youtube: https://music.youtube.com/watch?v=KOzVfkZOgiQ&feature=shared
+
+E1.2.C.2.2_REF2_PO IT IS SOMETHING TO BE SURE OF A DESIRE.
+
+"The Great Minimum
+
+It is something to have wept as we have wept,
+It is something to have done as we have done,
+It is something to have watched when all men slept,
+And seen the stars which never see the sun.
+
+It is something to have smelt the mystic rose,
+Although it break and leave the thorny rods,
+It is something to have hungered once as those
+Must hunger who have ate the bread of gods.
+
+To have seen you and your unforgotten face,
+Brave as a blast of trumpets for the fray,
+Pure as white lilies in a watery space,
+It were something, though you went from me today.
+
+To have known the things that from the weak are furled,
+Perilous ancient passions, strange and high;
+It is something to be wiser than the world,
+It is something to be older than the sky.
+
+In a time of sceptic moths and cynic rusts,
+And fattened lives that of their sweetness tire
+In a world of flying loves and fading lusts,
+It is something to be sure of a desire. [...]"
+
+(G.K. Chesterton, The Great Minimum, 1916)
+
+E1.2.C.2.2_REF3_PH "We know the only principle which sumarizes the ethics of psychoanalysis : "I propose that the only thing one can be guilty of, at least in the analytic perspective, is to have given in on one's desire". This "never give in to one's desire" is often interpreted in the sense of an unconditional imperative to enjoy oneself, in accord with the slogan that was inscribed on the walls in 1968: "Enjoy without limits". However, this is not at all what Lacan means. Enjoyment is not desire, it is even its exact opposite, since it equates to indifferentiation - there are no distinct elements within totality, otherwise totality would be divisible, and would therefore no longer be one, nor total as a consequence - in indifferentiation desire is annihilated. If desire is a vital tension, enjoyment on the contrary obeys to the death drive. Not to renounce desire, not to give in on one's desire, is therefore not to renounce the truth of one's desire, a truth that is precisely the object of the therapy. If there is an ethics of therapy, it is in this sense never to resignoneself to lying about the nature of one's desire, never renounce to recognize the origin and the structure of one's desire, never tell oneself fables for kids, whether it be the one [... ...] consecrated by conformism and the myth of conjugal happiness, or that, apparently more alternative, in truth just as gregarious, of the perpetual orgasm of an enjoyment that has become the object of profitable trade, the surplus value only showing itself today, in the market, always masked as forever-more-joy. What therapy offers to who agrees to embark in the adventure is by no means the lure of an endless and untroubled enjoyment, but the requirement of an uncompromising lucidity."
+(Jacques Darriulat, Lacan, Listen to Madness, 6 - Desire)
+
+Read the full essay in French: http://www.jdarriulat.net/Auteurs/Lacan/Ecouterlafolie/Ecouterlafolie6.html
+
+E1.2.C.2.3. "HAPPINESS DOES NOT CONSIST IN ENJOYMENT, BUT IN DESIRE; IT CONSISTS IN BREAKING DOWN THE BARRIERS THAT STAND IN THE WAY OF THIS DESIRE."
+(The Marquis de Sade, The 120 Days of Sodom, 1785)
+
+Sade puts the importance of sexual desire back in its rightful place in an hypocritical society brandishing the language of restriction, even of sexual abstinence, without it being humanly possible to resist natural desire. Man Ray seems to be saying : "Who, in front of this angelic vision, would not drop his religious taboos ?" (The crucifix upside down).
+
+E1.2.C.2.3_REF1_CUR JENNY HOLZER CHALLENGES PASSERS-BY ON A NEW YORK STREET, ASKING THEM TO CONSIDER WHAT DESIRE COULD SAVE US NOW THAT SEX CAN NO LONGER DO SO. The question immediately raises others. Has sex ever saved anyone, and if so, how and from what? If sexual desire is so powerful and widespread among humans, it can't be bad for us, can it? Sade also made his contemporaries question the place of desire - in today's godless world, and in a standardized society where the expression of individual desire is increasingly restricted, how can we achieve fulfillment when even pleasure is out of reach?
+Another interpretation is that after the sexual liberation of the 1960s and 1970s, it is clear that the erotic state, no matter how profound, is no guarantee of self-fulfillment-no guarantee of the lasting love that will save us: "The great, tragic illusion of loving souls is to see in the depth of the erotic state a guarantee of its permanence."
+(Ludwig Klages)
+
+E1.2.C.2.3_REF2_CUR "EVERYTHING IS GOOD WHEN IT IS EXCESSIVE"?
+(The Marquis de Sade, La Nouvelle Justine, 1799) 
+Without going as far as debauchery, because "it is an impossible quest to escape despair, and yet it ends in despair, a race from servitude to servitude".
+
+"But if crime and desire are not the law of the entire universe, if they do not reign at least over a specified territory, they are no longer unifying principles, but ferments of conflict. They are no longer the law, and man returns to chaos and confusion. Thus it is necessary to create from all these fragments a world that exactly coincides with the new law. The need for unity, which Creation leaves unsatisfied, is fulfilled, at all costs, in a microcosm. The law of power never has the patience to await complete control of the world. It must fix the boundaries, without delay, of the territory where it holds sway, even if it means surrounding it with barbed wire and observation towers. For Sade, the law of power implies barred gates, castles with seven circumvallations from which it is impossible to escape, and where a society founded on desire and crime functions unimpeded, according to the rules of an implacable system. The most unbridled rebellion, insistence on complete freedom, lead to the total subjection of the majority. [...]
+
+What part, in this universe, could pleasure play or the exquisite joy of acquiescent and accomplice bodies? In it we find an impossible quest for escape from despair—a quest that finishes, nevertheless, in a desperate race from servitude to servitude and from prison to prison. If only nature is real and if, in nature, only desire and destruction are legitimate, then, in that all humanity does not suffice to assuage the thirst for blood, the path of destruction must lead to universal annihilation. We must become, according to Sade's formula, nature's executioner. But even that position is not achieved too easily. When the accounts are closed, when all the victims are massacred, the executioners are left face to face in the deserted castle. Something is still missing. The tortured bodies return, in their elements, to nature and will be born again. Even murder cannot be fully consummated: "Murder only deprives the victim of his first life; a means must be found of depriving him of his second. . . ." Sade contemplates an attack on creation: "I abhor nature. ... I should like to upset its plans, to thwart its progress, to halt the stars in their courses, to overturn the floating spheres of space, to destroy what serves nature and to succor all that harms it; in a word, to insult it in all its works, and I cannot succeed in doing so." It is in vain that he dreams of a technician who can pulverize the universe: he knows that, in the dust of the spheres, life will continue. [...]
+
+They are alone, and one law alone governs them: the law of power. As they accepted it when they were masters, they cannot reject it if it turns against them. All power tends to be unique and solitary. Murder must be repeated: in their turn the masters will tear one another to pieces. Sade accepts this consequence and does not flinch. A curious kind of stoicism, derived from vice, sheds a little light in the dark places of his rebellious soul. He will not try to live again in the world of affection and compromise. The drawbridge will not be lowered; he will accept personal annihilation. The unbridled force of his refusal achieves, at its climax, an unconditional acceptance that is not without nobility. The master consents to be the slave in his turn and even, perhaps, wishes to be. "The scaffold would be for me the throne of voluptuousness." Thus the greatest degree of destruction coincides with ' the greatest degree of affirmation. The masters throw themselves on one another, and Sade's work, dedicated to the glory of libertinism, ends by being "strewn with corpses of libertines struck down at the height of their powers." The most powerful, the one who will survive, is the solitary, the Unique, whose glorification Sade has undertaken—in other words, himself. At last he reigns supreme, master and God. But at the moment of his greatest victory the dream vanishes. The Unique turns back toward the prisoner whose unbounded imagination gave birth to him, and they become one. He is in fact alone, imprisoned in a bloodstained Bastille, entirely constructed around a still unsatisfied, and henceforth undirected, desire for pleasure. He has only triumphed in a dream and those ten volumes crammed with philosophy and atrocities recapitulate an unhappy form of asceticism, an illusory advance from the total no to the absolute yes, an acquiescence in death at last, which transfigures the assassination of everything and everyone into a collective suicide. [...]
+
+Two centuries ahead of time and on a reduced scale, Sade extolled totalitarian societies in the name of unbridled freedom—which, in reality, rebellion does not demand. The history and the tragedy of our times really begin with him. He only believed that a society founded on freedom of crime must coincide with freedom of morals, as though servitude had its limits. Our times have limited themselves to blending, in a curious manner, his dream of a universal republic and his technique of degradation. Finally, what he hated most, legal murder, has availed itself of the discoveries that he wanted to put to the service of instinctive murder. Crime, which he wanted to be the exotic and delicious fruit of unbridled vice, is no more today than the dismal habit of a police-controlled morality."
+(Albert Camus, L´Homme révolté, La révolte méthaphysique, 1951)
+
+E1.2.C.2.4. "BEYOND THE DIFFICULTY OF COMMUNICATING ONESELF, THERE IS THE SUPREME DIFFICULTY OF BEING ONESELF. This soul, or life within us, by no means agrees with the life outside us. If one has the courage to ask her what she thinks, she is always saying the very opposite to what other people say. [...]
+
+The man who is aware of himself is henceforward independent; and he is never bored, and life is only too short, and he is steeped through and through with a profound yet temperate happiness. He alone lives, while other people, slaves of ceremony, let life slip past them in a kind of dream. Once conform, once do what other people do because they do it, and a lethargy steals over all the finer nerves and faculties of the soul. She becomes all outer show and inward emptiness; dull, callous, and indifferent. [...]
+
+Let us simmer over our incalculable cauldron, our enthralling confusion, our hotch-potch of impulses, our perpetual miracle — for the soul throws up wonders every second. Movement and change are the essence of our being; rigidity is death; conformity is death: let us say what comes into our heads, repeat ourselves, contradict ourselves, fling out the wildest nonsense, and follow the most fantastic fancies without caring what the world does or thinks or says."
+(Viginia Woolf in her essay about the essays of Montaigne, published in Common Reader)
+
+E1.2.C.3. ISN'T THE CONCEPT OF INDIVIDUAL HAPPINESS AT ODDS WITH THAT OF "PUBLIC HAPPINESS," WHICH IS AT LEAST PARTIALLY STANDARDIZED?
+The right to happiness is enshrined in the U.S. Constitution as an inalienable human right. The pursuit of happiness through public policy was also the goal of John Stuart Mill and Marxist movements. Can we say that this "right" to happiness has become a "duty" to be happy in the Western world today?
+
+E1.2.C.3.1. IT IS NOT "HAPPINESS" THAT IS A RIGHT IN THE US CONSTITUTION, BUT THE "PURSUIT OF HAPPINESS". Should we interpret this to mean that happiness is different for everyone, or should we understand it as a standardized goal?
+On the other hand, it seems clear that it is the duty of government to provide an environment conducive to this pursuit.
+
+Public happiness : “life, liberty and the pursuit of happiness.”
+Like Whitman, who believed that literature is the seedbed of democracy, the Founding Fathers were greatly inspired by the literature and philosophy of the Renaissance — particularly by the “men of letters” of eighteenth-century France. Arendt traces the chain of ideological influence across time, space, and culture to the French Revolution and its ideal of “public happiness,” which Jefferson appropriated. In a paper penned two years before The Declaration of Independence, he argued that the ancestors who had left Europe for America had enacted “a right which nature has given all men… of establishing new societies, under such laws and regulations as to them shall seem most likely to promote public happiness.” He then incorporated this insistence on happiness into his blatantly obvious yet somehow stealthy revision of The Declaration of Independence, changing the formulation of inalienable rights from “life, liberty and property” to “life, liberty and the pursuit of happiness.”
+(Maria Popova, Brainpickings, 18/03/20180)
+
+E1.2.C.3.1_REF1_LIT "WE HOLD THESE TRUTHS TO BE SACRED & UNDENIABLE, that all men are created equal & independent, that from that equal creation they derive rights inherent & inalienable, among which are the preservation of life, & liberty, & the pursuit of happiness; that to secure these ends, governments are instituted among men, deriving their just powers from the consent of the governed.”
+(Jefferson wrote in 1776, in a draft of the Declaration of Independence)
+
+"The roots of these ideas are as ancient as Aristotle and as old as Genesis and their branches spread as wide as the limbs of an oak. But they are this nation’s founding principles: it was by declaring them that the nation came to be. In the centuries since, these principles have been cherished, decried, and contested, fought for, fought over, and fought against. After Benjamin Franklin read Jefferson’s draft, he picked up his quill, scratched out the words “sacred & undeniable,” and suggested that “these truths” were, instead, “self-evident.” This was more than a quibble. Truths that are sacred and undeniable are God-given and divine, the stuff of religion. Truths that are self-evident are laws of nature, empirical and observable, the stuff of science. This divide has nearly rent the Republic apart."
+(Jill Lepore, These Truths: A History of the United States)
+
+E1.2.C.3.1_REF2_PH THE  MOST ELUSIVE OF HUMAN RIGHTS :
+"Among the many surprises this country [The USA] holds in store for its new citizens… there is the amazing discovery that the “pursuit of happiness,” which the Declaration of Independence asserted to be one of the inalienable human rights, has remained to this day considerably more than a meaningless phrase in the public and private life of the American Republic. To the extent that there is such a thing as the American frame of mind, it certainly has been deeply influenced, for better or worse, by this most elusive of human rights, which apparently entitles men, in the words of Howard Mumford Jones, to “the ghastly privilege of pursuing a phantom and embracing a delusion.” 
+(Hannah Arendt, Action and "the Pursuit of Happiness", 1960)
+
+E1.6.E.2.3.g_REF1_PH.wE1.2.C.3.1.
+
+E1.2.C.3.2. The concept of individual happiness is opposed to the happiness of the greatest number, which utilitarians such as John Stuart Mill and Marxism sought to promote through public policy.
+- Utilitarianism and Happiness (to be developed) - Marxism and Happiness (to be developed)
+
+E1.2.A.5.wE1.2.C.3.
+
+E1.2.C.4. "THE JOY OF BEING AND SUBSTANTIAL ACTS 
+First, the most important fact must be stated: the joy of being will not be experienced as a compact mass [...] 
+When able to express itself, it will not be known as the blind and deaf mass of some Absolute, but as movement and activity. 
+It is this activity that will express itself as happiness itself and the joy of being, rejoicing in its own movement and expression. [...] 
+The reader's spontaneity will choose from among the various activities (dreaming, acting, thinking, loving, creating) those which it will make its own, either successively [...]
+Thus, at a certain age, the individual becomes capable of integrating and actualizing these initially distinct and successive stages of existence into one great continuous present. They then cease to be like pearls on a string or stations on a cross, and become the various intense modalities of his life, the various figures of his 'happiness', that is, his joy and his being. or simultaneously."
+ (Robert Misrahi, The Acts of Joy, 1987)
+
+E1.2.C.4.1. "THE MISTAKE IS TO SEEK HAPPINESS AT ALL. It is to hope for it tomorrow, when we are not there, and to forbid ourselves to experience it today. Instead, concentrate on what really matters: work, action, pleasure, love - the world. Happiness will come as a bonus when it does, and you'll miss it less when it doesn't. It is easier to achieve when you have stopped striving for it.
+"Happiness is a reward," said Alain, "that comes to those who do not seek it."
+(André Comte-Sponville, Philosophical Dictionary, 2013)
+
+E1.2.C.4.2. "PEACE IS HAPPINESS AT REST AND HAPPINESS IS PEACE IN MOTION. You can convert peace to happiness anytime you want."
+(Naval Ravikant)

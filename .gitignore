@@ -1,0 +1,13 @@
+# datasets
+images/
+out/
+*.json
+*.jsonl
+
+# python
+__pycache__/
+*.pyc
+.env
+
+# vscode
+.vscode/

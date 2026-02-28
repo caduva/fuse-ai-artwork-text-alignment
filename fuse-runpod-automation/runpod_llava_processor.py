@@ -35,57 +35,40 @@ OUTPUT_DIR = os.getenv("OUTPUT_DIR", "/workspace/output")
 OUTPUT_FILE_JSONL = os.path.join(OUTPUT_DIR, "llava_captions.jsonl")
 OUTPUT_FILE_JSON = os.path.join(OUTPUT_DIR, "llava_captions.json")
 
-MAX_NEW_TOKENS = int(os.getenv("MAX_NEW_TOKENS", "260"))
+MAX_NEW_TOKENS = int(os.getenv("MAX_NEW_TOKENS", "420"))
 FLUSH_EVERY = int(os.getenv("FLUSH_EVERY", "10"))
 MAX_SIDE = int(os.getenv("MAX_SIDE", "768"))
+NUM_BEAMS = int(os.getenv("NUM_BEAMS", "3"))
+REPAIR_MAX_NEW_TOKENS = int(os.getenv("REPAIR_MAX_NEW_TOKENS", "240"))
 
-# If true, we re-run only the model output repair step when JSON parsing fails
-ENABLE_REPAIR_ATTEMPT = os.getenv("ENABLE_REPAIR_ATTEMPT", "1").strip() not in ("0", "false", "False")
-
-# Print header
-print("=" * 70)
-print("LLAVA ARTWORK PROCESSOR (STRUCTURED JSON OUTPUT)")
-print("=" * 70)
-
-# Create output directory
-os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-# =========================
-# Load model
-# =========================
-print("\n[1/4] Loading LLaVA model...")
-processor = AutoProcessor.from_pretrained(MODEL_ID)
-
-model = LlavaForConditionalGeneration.from_pretrained(
-    MODEL_ID,
-    torch_dtype=torch.float16,
-    device_map="auto"
-)
-model.eval()
-
-print("✓ Model loaded successfully")
-print(f"  MODEL_ID: {MODEL_ID}")
-print(f"  DEVICE  : {model.device}")
+ENABLE_REPAIR_ATTEMPT = int(os.getenv("ENABLE_REPAIR_ATTEMPT", "1"))
 
 # =========================
 # Prompt
 # =========================
 INSTRUCTION = (
     "You are analysing an artwork image.\n"
-    "Step 1: Give a short objective description (what is visibly present).\n"
-    "Step 2: Provide a conceptual interpretation (possible meaning, symbolism, intent).\n"
-    "Step 3: List 3–6 visual cues that justify your interpretation.\n"
-    "Step 4: Offer up to 2 alternative interpretations if plausible.\n"
     "\n"
-    "IMPORTANT:\n"
-    "If there is any clearly readable text, words, or typography visible in the image,\n"
-    "treat this text as part of the artwork itself and explicitly consider its meaning\n"
-    "and its relationship to the visual elements in your interpretation.\n"
-    "Do not invent or guess unreadable text.\n"
-    "\n"
-    "Rules: Do not guess the artist or title. Do not invent facts not supported by the image.\n"
-    "Return valid JSON only (no extra commentary, no markdown). Use these keys exactly:\n"
+    "Return valid JSON only (no extra commentary, no markdown).\n"
+    "Use these keys exactly and do NOT include any extra keys:\n"
     "objective, interpretation, visual_cues, alternatives, confidence.\n"
+    "\n"
+    "CONTENT REQUIREMENTS (do not be minimal):\n"
+    "objective: 2–4 full sentences describing ONLY what is visibly present.\n"
+    "interpretation: 4–8 full sentences explaining possible meaning/symbolism/intent.\n"
+    "visual_cues: a JSON array with 8–12 concrete cues (short phrases).\n"
+    "alternatives: a JSON array with 2–3 alternative interpretations IF plausible, otherwise an empty array [].\n"
+    "confidence: a number between 0.0 and 1.0 (e.g., 0.72).\n"
+    "\n"
+    "IMPORTANT TEXT RULE:\n"
+    "If there is clearly readable text/words/typography in the image, treat it as part of the artwork and\n"
+    "explicitly consider its meaning and its relationship to the visual elements.\n"
+    "Do NOT invent or guess unreadable text.\n"
+    "\n"
+    "QUALITY RULES:\n"
+    "- Do not guess the artist, title, or date.\n"
+    "- Do not invent facts not supported by the image.\n"
+    "- Do not use generic placeholders like \"Analyse an artwork image\". Be concrete.\n"
 )
 
 # =========================
@@ -104,44 +87,136 @@ def resize_for_vlm(img: Image.Image, max_side: int = 768) -> Image.Image:
 def _extract_first_json_obj(text: str) -> Optional[str]:
     """
     Extract the first JSON object substring from a model output.
-    This handles cases where the model echoes some text before/after.
+
+    Uses a balanced-brace scan to avoid greedy regex issues when the model
+    outputs extra braces or multiple JSON objects.
     """
     t = (text or "").strip()
+    if not t:
+        return None
 
-    # Normalize common artifact: model outputs 'visual\_cues' (escaped underscore)
+    # Normalise common artefact: model outputs 'visual\_cues' (escaped underscore)
     t = t.replace("\\_", "_")
 
-    # If the model echoed the instruction, remove it
-    if INSTRUCTION in t:
-        t = t.split(INSTRUCTION, 1)[-1].strip()
-
-    # Find first {...} block
-    m = re.search(r"\{.*\}", t, flags=re.DOTALL)
-    if not m:
+    start = t.find("{")
+    if start == -1:
         return None
-    return m.group(0).strip()
+
+    depth = 0
+    in_str = False
+    esc = False
+    for i in range(start, len(t)):
+        ch = t[i]
+        if in_str:
+            if esc:
+                esc = False
+                continue
+            if ch == "\\":  # escape char
+                esc = True
+                continue
+            if ch == '"':
+                in_str = False
+            continue
+
+        # not in string
+        if ch == '"':
+            in_str = True
+            continue
+        if ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                return t[start:i + 1]
+
+    return None
 
 
 def _safe_json_loads(s: str) -> Dict[str, Any]:
+    """Load JSON safely, raising a useful error message."""
+    try:
+        return json.loads(s)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Invalid JSON: {e}") from e
+
+
+def _normalise_llava_json(d: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Parse JSON string. If it fails, raise.
+    Normalise model output to a stable schema for downstream use.
+    - Ensures required keys exist.
+    - Coerces visual_cues/alternatives to lists.
+    - Coerces confidence to float in [0, 1] when possible.
     """
-    return json.loads(s)
+    out: Dict[str, Any] = dict(d or {})
+
+    # Ensure keys exist
+    out.setdefault("objective", "")
+    out.setdefault("interpretation", "")
+    out.setdefault("visual_cues", [])
+    out.setdefault("alternatives", [])
+    out.setdefault("confidence", None)
+
+    # Coerce lists
+    if isinstance(out.get("visual_cues"), str):
+        vc = out["visual_cues"].strip()
+        out["visual_cues"] = [vc] if vc else []
+    elif out.get("visual_cues") is None:
+        out["visual_cues"] = []
+    else:
+        out["visual_cues"] = list(out["visual_cues"]) if not isinstance(out["visual_cues"], list) else out["visual_cues"]
+
+    if isinstance(out.get("alternatives"), str):
+        alt = out["alternatives"].strip()
+        out["alternatives"] = [alt] if alt else []
+    elif out.get("alternatives") is None:
+        out["alternatives"] = []
+    else:
+        out["alternatives"] = list(out["alternatives"]) if not isinstance(out["alternatives"], list) else out["alternatives"]
+
+    # Confidence mapping
+    conf = out.get("confidence")
+    if isinstance(conf, str):
+        s = conf.strip().lower()
+        mapping = {
+            "very high": 0.95,
+            "high": 0.85,
+            "medium": 0.65,
+            "moderate": 0.65,
+            "low": 0.35,
+            "very low": 0.15,
+        }
+        if s in mapping:
+            out["confidence"] = mapping[s]
+        else:
+            try:
+                out["confidence"] = float(re.findall(r"[-+]?[0-9]*\.?[0-9]+", s)[0])
+            except Exception:
+                out["confidence"] = None
+    elif isinstance(conf, (int, float)):
+        out["confidence"] = float(conf)
+    else:
+        out["confidence"] = None
+
+    if isinstance(out["confidence"], float):
+        out["confidence"] = max(0.0, min(1.0, out["confidence"]))
+
+    # Strip overly generic objective if it slipped through
+    if isinstance(out.get("objective"), str):
+        obj = out["objective"].strip()
+        if obj.lower() in ("analyse an artwork image", "analyze an artwork image", "analyse the artwork image", "analyze the artwork image"):
+            out["objective"] = ""
+
+    return out
 
 
 def _repair_to_json(raw_text: str) -> Dict[str, Any]:
     """
-    Attempt to coerce a malformed JSON-like output into valid JSON using the language model itself.
-    This is text-only (no image) and cheap relative to re-running vision.
+    Attempt to repair malformed model output into strict JSON using a second pass.
     """
     repair_prompt = (
-        "Convert the following text into VALID JSON ONLY.\n"
+        "You will be given an output that SHOULD be a single JSON object.\n"
+        "Fix it and output STRICT JSON only.\n\n"
         "Rules:\n"
-        "- Output must be a single JSON object.\n"
-        "- Use keys exactly: objective, interpretation, visual_cues, alternatives, confidence.\n"
-        "- visual_cues must be an array of strings.\n"
-        "- alternatives must be an array of strings.\n"
-        "- If a field is missing, use empty string or empty array accordingly.\n"
         "- Do NOT include any extra keys.\n"
         "- Do NOT include any markdown.\n\n"
         "TEXT:\n"
@@ -154,7 +229,7 @@ def _repair_to_json(raw_text: str) -> Dict[str, Any]:
     with torch.no_grad():
         out = model.generate(
             **inputs,
-            max_new_tokens=240,
+            max_new_tokens=REPAIR_MAX_NEW_TOKENS,
             do_sample=False,
             num_beams=1
         )
@@ -163,10 +238,10 @@ def _repair_to_json(raw_text: str) -> Dict[str, Any]:
     json_str = _extract_first_json_obj(repaired)
     if not json_str:
         raise ValueError("repair_failed_no_json_object_found")
-    return _safe_json_loads(json_str)
+    return _normalise_llava_json(_safe_json_loads(json_str))
 
 
-def llava_describe_structured(image: Image.Image, max_new_tokens: int = 260) -> Dict[str, Any]:
+def llava_describe_structured(image: Image.Image, max_new_tokens: int = MAX_NEW_TOKENS) -> Dict[str, Any]:
     """
     Generate artwork description using LLaVA, returning a structured dict.
     On parse errors, returns dict with raw_output + parse_error.
@@ -180,7 +255,7 @@ def llava_describe_structured(image: Image.Image, max_new_tokens: int = 260) -> 
             **inputs,
             max_new_tokens=max_new_tokens,
             do_sample=False,
-            num_beams=1
+            num_beams=NUM_BEAMS
         )
 
     raw = processor.batch_decode(out, skip_special_tokens=True)[0].strip()
@@ -195,12 +270,13 @@ def llava_describe_structured(image: Image.Image, max_new_tokens: int = 260) -> 
 
     try:
         parsed = _safe_json_loads(json_str)
-        return parsed
+        return _normalise_llava_json(parsed)
     except Exception as e:
         # Optional repair attempt
         if ENABLE_REPAIR_ATTEMPT:
             try:
                 repaired = _repair_to_json(raw_text=raw)
+                repaired = _normalise_llava_json(repaired)
                 repaired["_repaired"] = True
                 return repaired
             except Exception as e2:
@@ -237,6 +313,27 @@ def jsonl_to_json_array(jsonl_path: str, json_path: str) -> None:
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
+
+# =========================
+# [1/4] Setup output dir
+# =========================
+print("\n[1/4] Preparing output directory...")
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+# =========================
+# Load model + processor
+# =========================
+print("\n[1/4] Loading model + processor...")
+device = "cuda" if torch.cuda.is_available() else "cpu"
+print(f"Device: {device}")
+
+processor = AutoProcessor.from_pretrained(MODEL_ID)
+model = LlavaForConditionalGeneration.from_pretrained(
+    MODEL_ID,
+    torch_dtype=torch.float16 if device == "cuda" else torch.float32,
+    low_cpu_mem_usage=True,
+).to(device)
+model.eval()
 
 # =========================
 # Find images
@@ -281,93 +378,66 @@ print(f"Output JSONL       : {OUTPUT_FILE_JSONL}")
 print(f"Output JSON        : {OUTPUT_FILE_JSON}")
 print(f"Max side           : {MAX_SIDE}")
 print(f"Max new tokens     : {MAX_NEW_TOKENS}")
+print(f"Beams              : {NUM_BEAMS}")
 print(f"Flush every        : {FLUSH_EVERY}")
 print(f"Repair attempt     : {ENABLE_REPAIR_ATTEMPT}")
 print(f"{'='*70}\n")
 
 if len(todo) == 0:
-    print("✓ All images already processed!")
-    # Still ensure JSON array exists for convenience
-    jsonl_to_json_array(OUTPUT_FILE_JSONL, OUTPUT_FILE_JSON)
+    print("Nothing to do.")
     raise SystemExit(0)
 
 # =========================
-# Process images
+# Process
 # =========================
-print("[3/4] Processing images...")
-rows_buffer: List[Dict[str, Any]] = []
-start_time = time.time()
+print("\n[3/4] Processing images...")
 
-for idx, fn in enumerate(tqdm(todo, desc="Processing"), 1):
-    path = os.path.join(IMAGES_DIR, fn)
+buffer: List[Dict[str, Any]] = []
+processed_now = 0
+
+for fn in tqdm(todo):
+    in_path = os.path.join(IMAGES_DIR, fn)
     t0 = time.time()
 
     try:
-        img = Image.open(path).convert("RGB")
-        img = resize_for_vlm(img, max_side=MAX_SIDE)
+        img = Image.open(in_path).convert("RGB")
+        img = resize_for_vlm(img, MAX_SIDE)
 
-        desc_obj = llava_describe_structured(img, max_new_tokens=MAX_NEW_TOKENS)
-        elapsed = round(time.time() - t0, 2)
+        llava_json = llava_describe_structured(img, max_new_tokens=MAX_NEW_TOKENS)
 
         status = "ok"
-        if "parse_error" in desc_obj:
+        if "parse_error" in llava_json:
             status = "ok_with_parse_issue"
 
         record = {
             "image_filename": fn,
-            "llava_description": desc_obj,  # <--- dict, not string
-            "processing_time_seconds": elapsed,
             "status": status,
-            "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
-            "embeddings": None,
-            "web_metadata": None,
-            "similarity_scores": None
+            "llava_description": llava_json,
+            "elapsed_seconds": round(time.time() - t0, 3),
+            "model_id": MODEL_ID,
+        }
+    except Exception as e:
+        record = {
+            "image_filename": fn,
+            "status": "failed",
+            "error": f"{type(e).__name__}: {e}",
+            "elapsed_seconds": round(time.time() - t0, 3),
+            "model_id": MODEL_ID,
         }
 
-        rows_buffer.append(record)
+    buffer.append(record)
+    processed_now += 1
 
-        # Progress update every 10 images
-        if idx % 10 == 0:
-            avg_time = (time.time() - start_time) / idx
-            remaining = len(todo) - idx
-            eta_seconds = remaining * avg_time
-            eta_hours = eta_seconds / 3600
-            print(f"\n✓ Processed {idx}/{len(todo)} | Avg: {avg_time:.1f}s/image | ETA: {eta_hours:.1f}h")
+    if processed_now % FLUSH_EVERY == 0:
+        append_jsonl(OUTPUT_FILE_JSONL, buffer)
+        buffer = []
 
-    except Exception as e:
-        elapsed = round(time.time() - t0, 2)
-        print(f"\n✗ Error processing {fn}: {type(e).__name__}: {str(e)[:160]}")
+# Flush remaining
+if buffer:
+    append_jsonl(OUTPUT_FILE_JSONL, buffer)
 
-        rows_buffer.append({
-            "image_filename": fn,
-            "llava_description": {"raw_output": "", "parse_error": f"runtime_error: {type(e).__name__}: {e}"},
-            "processing_time_seconds": elapsed,
-            "status": "error",
-            "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
-            "embeddings": None,
-            "web_metadata": None,
-            "similarity_scores": None
-        })
-
-    # Flush buffer
-    if len(rows_buffer) >= FLUSH_EVERY:
-        append_jsonl(OUTPUT_FILE_JSONL, rows_buffer)
-        rows_buffer = []
-
-# Final flush
-if rows_buffer:
-    append_jsonl(OUTPUT_FILE_JSONL, rows_buffer)
-
-# Build JSON array for JSONCrack
+# Convert to JSON array for convenience
+print("\n[4/4] Building JSON array file...")
 jsonl_to_json_array(OUTPUT_FILE_JSONL, OUTPUT_FILE_JSON)
 
-total_time = time.time() - start_time
-print(f"\n{'='*70}")
-print("[4/4] PROCESSING COMPLETE!")
-print(f"{'='*70}")
-print(f"Total time        : {total_time/3600:.2f} hours")
-print(f"Images processed  : {len(todo)}")
-print(f"Output JSONL      : {OUTPUT_FILE_JSONL}")
-print(f"Output JSON       : {OUTPUT_FILE_JSON}")
-print(f"{'='*70}\n")
-print("Download your results from /workspace/output/")
+print("\nDone.")

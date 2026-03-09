@@ -7,16 +7,18 @@ Outputs:
 - JSONL: /workspace/output/llava_captions.jsonl  (one JSON object per line)
 - JSON : /workspace/output/llava_captions.json   (array JSON for JSONCrack)
 
-Key change vs previous version:
-- llava_description is saved as a real JSON object (dict), not a string.
-- If parsing fails, we store raw_output + parse_error, without breaking JSONL.
+Final production-oriented version:
+- Keeps the same model, prompt, image size, and token budget used for quality.
+- Flushes every image to reduce loss on interruptions.
+- Loads the model explicitly onto a single GPU when CUDA is available.
+- Uses torch.inference_mode() and explicit gc cleanup for long runs.
 """
 
+import gc
 import os
 import json
 import time
 import re
-from pathlib import Path
 from typing import Any, Dict, Optional, List
 
 from tqdm import tqdm
@@ -36,7 +38,7 @@ OUTPUT_FILE_JSONL = os.path.join(OUTPUT_DIR, "llava_captions.jsonl")
 OUTPUT_FILE_JSON = os.path.join(OUTPUT_DIR, "llava_captions.json")
 
 MAX_NEW_TOKENS = int(os.getenv("MAX_NEW_TOKENS", "260"))
-FLUSH_EVERY = int(os.getenv("FLUSH_EVERY", "10"))
+FLUSH_EVERY = int(os.getenv("FLUSH_EVERY", "1"))
 MAX_SIDE = int(os.getenv("MAX_SIDE", "768"))
 NUM_BEAMS = int(os.getenv("NUM_BEAMS", "1"))
 REPAIR_MAX_NEW_TOKENS = int(os.getenv("REPAIR_MAX_NEW_TOKENS", "240"))
@@ -49,27 +51,28 @@ ENABLE_REPAIR_ATTEMPT = int(os.getenv("ENABLE_REPAIR_ATTEMPT", "0"))
 INSTRUCTION = (
     "You are analysing an artwork image.\n"
     "\n"
-    "Return valid JSON only (no extra commentary, no markdown).\n"
-    "Use these keys exactly and do NOT include any extra keys:\n"
+    "Step 1: Describe objectively what is visibly present in the image.\n"
+    "Step 2: Provide a conceptual interpretation of the possible meaning, symbolism, or artistic intent.\n"
+    "Base this interpretation on the visual elements that can be observed.\n"
+    "Step 3: List 4–8 short visual cues that support your interpretation.\n"
+    "Step 4: Offer up to 2 alternative interpretations if plausible.\n"
+    "\n"
+    "IMPORTANT:\n"
+    "If there is clearly readable text in the image, treat it as part of the artwork and consider its meaning.\n"
+    "Do not invent unreadable text.\n"
+    "\n"
+    "Do not guess the artist, title, or date.\n"
+    "Do not invent facts not supported by the image.\n"
+    "\n"
+    "Output JSON with keys:\n"
     "objective, interpretation, visual_cues, alternatives, confidence.\n"
-    "\n"
-    "CONTENT REQUIREMENTS (do not be minimal):\n"
-    "objective: 2–4 full sentences describing ONLY what is visibly present.\n"
-    "interpretation: 4–8 full sentences explaining possible meaning/symbolism/intent.\n"
-    "visual_cues: a JSON array with 8–12 concrete cues (short phrases).\n"
-    "alternatives: a JSON array with 2–3 alternative interpretations IF plausible, otherwise an empty array [].\n"
-    "confidence: a number between 0.0 and 1.0 (e.g., 0.72).\n"
-    "\n"
-    "IMPORTANT TEXT RULE:\n"
-    "If there is clearly readable text/words/typography in the image, treat it as part of the artwork and\n"
-    "explicitly consider its meaning and its relationship to the visual elements.\n"
-    "Do NOT invent or guess unreadable text.\n"
-    "\n"
-    "QUALITY RULES:\n"
-    "- Do not guess the artist, title, or date.\n"
-    "- Do not invent facts not supported by the image.\n"
-    "- Do not use generic placeholders like \"Analyse an artwork image\". Be concrete.\n"
 )
+
+# Globals initialised after model load
+processor = None
+model = None
+device = "cpu"
+
 
 # =========================
 # Helper functions
@@ -111,14 +114,13 @@ def _extract_first_json_obj(text: str) -> Optional[str]:
             if esc:
                 esc = False
                 continue
-            if ch == "\\":  # escape char
+            if ch == "\\":
                 esc = True
                 continue
             if ch == '"':
                 in_str = False
             continue
 
-        # not in string
         if ch == '"':
             in_str = True
             continue
@@ -149,14 +151,12 @@ def _normalise_llava_json(d: Dict[str, Any]) -> Dict[str, Any]:
     """
     out: Dict[str, Any] = dict(d or {})
 
-    # Ensure keys exist
     out.setdefault("objective", "")
     out.setdefault("interpretation", "")
     out.setdefault("visual_cues", [])
     out.setdefault("alternatives", [])
     out.setdefault("confidence", None)
 
-    # Coerce lists
     if isinstance(out.get("visual_cues"), str):
         vc = out["visual_cues"].strip()
         out["visual_cues"] = [vc] if vc else []
@@ -173,7 +173,6 @@ def _normalise_llava_json(d: Dict[str, Any]) -> Dict[str, Any]:
     else:
         out["alternatives"] = list(out["alternatives"]) if not isinstance(out["alternatives"], list) else out["alternatives"]
 
-    # Confidence mapping
     conf = out.get("confidence")
     if isinstance(conf, str):
         s = conf.strip().lower()
@@ -200,19 +199,44 @@ def _normalise_llava_json(d: Dict[str, Any]) -> Dict[str, Any]:
     if isinstance(out["confidence"], float):
         out["confidence"] = max(0.0, min(1.0, out["confidence"]))
 
-    # Strip overly generic objective if it slipped through
     if isinstance(out.get("objective"), str):
         obj = out["objective"].strip()
-        if obj.lower() in ("analyse an artwork image", "analyze an artwork image", "analyse the artwork image", "analyze the artwork image"):
+        if obj.lower() in (
+            "analyse an artwork image",
+            "analyze an artwork image",
+            "analyse the artwork image",
+            "analyze the artwork image",
+        ):
             out["objective"] = ""
 
     return out
 
 
+def _cleanup_cuda(*objs: Any) -> None:
+    """Free references and encourage host/GPU memory cleanup."""
+    for obj in objs:
+        try:
+            del obj
+        except Exception:
+            pass
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+    gc.collect()
+
+
+def _move_inputs_to_device(batch: Dict[str, Any], target_device: str) -> Dict[str, Any]:
+    """Move tensor inputs to the selected device."""
+    moved: Dict[str, Any] = {}
+    for k, v in batch.items():
+        if torch.is_tensor(v):
+            moved[k] = v.to(target_device)
+        else:
+            moved[k] = v
+    return moved
+
+
 def _repair_to_json(raw_text: str) -> Dict[str, Any]:
-    """
-    Attempt to repair malformed model output into strict JSON using a second pass.
-    """
+    """Attempt to repair malformed model output into strict JSON using a second pass."""
     repair_prompt = (
         "You will be given an output that SHOULD be a single JSON object.\n"
         "Fix it and output STRICT JSON only.\n\n"
@@ -224,22 +248,19 @@ def _repair_to_json(raw_text: str) -> Dict[str, Any]:
     )
 
     inputs = processor(text=repair_prompt, return_tensors="pt")
-    inputs = {k: v.to(device) for k, v in inputs.items() if torch.is_tensor(v)}
+    inputs = _move_inputs_to_device(inputs, device)
 
-    with torch.no_grad():
+    with torch.inference_mode():
         out = model.generate(
             **inputs,
             max_new_tokens=REPAIR_MAX_NEW_TOKENS,
             do_sample=False,
-            num_beams=1
+            num_beams=1,
         )
 
     repaired = processor.batch_decode(out, skip_special_tokens=True)[0].strip()
+    _cleanup_cuda(out, inputs)
 
-    # Free VRAM between calls
-    del out, inputs
-    if torch.cuda.is_available():
-        torch.cuda.empty_cache()
     json_str = _extract_first_json_obj(repaired)
     if not json_str:
         raise ValueError("repair_failed_no_json_object_found")
@@ -253,36 +274,30 @@ def llava_describe_structured(image: Image.Image, max_new_tokens: int = MAX_NEW_
     """
     prompt = "<image>\n" + INSTRUCTION
     inputs = processor(images=image, text=prompt, return_tensors="pt")
-    inputs = {k: v.to(device) for k, v in inputs.items() if torch.is_tensor(v)}
+    inputs = _move_inputs_to_device(inputs, device)
 
-    with torch.no_grad():
+    with torch.inference_mode():
         out = model.generate(
             **inputs,
             max_new_tokens=max_new_tokens,
             do_sample=False,
-            num_beams=NUM_BEAMS
+            num_beams=NUM_BEAMS,
         )
 
     raw = processor.batch_decode(out, skip_special_tokens=True)[0].strip()
+    _cleanup_cuda(out, inputs)
 
-    # Free VRAM between calls
-    del out, inputs
-    if torch.cuda.is_available():
-        torch.cuda.empty_cache()
-
-    # Extract JSON object from raw
     json_str = _extract_first_json_obj(raw)
     if not json_str:
         return {
             "raw_output": raw,
-            "parse_error": "no_json_object_found"
+            "parse_error": "no_json_object_found",
         }
 
     try:
         parsed = _safe_json_loads(json_str)
         return _normalise_llava_json(parsed)
     except Exception as e:
-        # Optional repair attempt
         if ENABLE_REPAIR_ATTEMPT:
             try:
                 repaired = _repair_to_json(raw_text=raw)
@@ -293,12 +308,12 @@ def llava_describe_structured(image: Image.Image, max_new_tokens: int = MAX_NEW_
                 return {
                     "raw_output": raw,
                     "parse_error": f"json_parse_failed: {type(e).__name__}: {e}",
-                    "repair_error": f"{type(e2).__name__}: {e2}"
+                    "repair_error": f"{type(e2).__name__}: {e2}",
                 }
 
         return {
             "raw_output": raw,
-            "parse_error": f"json_parse_failed: {type(e).__name__}: {e}"
+            "parse_error": f"json_parse_failed: {type(e).__name__}: {e}",
         }
 
 
@@ -307,6 +322,8 @@ def append_jsonl(path: str, rows: List[Dict[str, Any]]) -> None:
     with open(path, "a", encoding="utf-8") as f:
         for row in rows:
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
+            f.flush()
+            os.fsync(f.fileno())
 
 
 def jsonl_to_json_array(jsonl_path: str, json_path: str) -> None:
@@ -339,19 +356,19 @@ print(f"Device: {device}")
 
 processor = AutoProcessor.from_pretrained(MODEL_ID)
 
-# Match Colab footprint: avoid forcing full model to a single GPU with `.to(device)`.
-# On CUDA, let Accelerate handle placement.
 _model_kwargs = dict(
     torch_dtype=torch.float16 if device == "cuda" else torch.float32,
     low_cpu_mem_usage=True,
 )
-if device == "cuda":
-    _model_kwargs["device_map"] = "auto"
 
 model = LlavaForConditionalGeneration.from_pretrained(
     MODEL_ID,
     **_model_kwargs,
 )
+
+if device == "cuda":
+    model = model.to("cuda")
+
 model.eval()
 
 # =========================
@@ -417,6 +434,7 @@ processed_now = 0
 for fn in tqdm(todo):
     in_path = os.path.join(IMAGES_DIR, fn)
     t0 = time.time()
+    img = None
 
     try:
         img = Image.open(in_path).convert("RGB")
@@ -443,6 +461,8 @@ for fn in tqdm(todo):
             "elapsed_seconds": round(time.time() - t0, 3),
             "model_id": MODEL_ID,
         }
+    finally:
+        _cleanup_cuda(img)
 
     buffer.append(record)
     processed_now += 1

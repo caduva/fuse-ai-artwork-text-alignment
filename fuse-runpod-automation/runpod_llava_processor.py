@@ -35,13 +35,13 @@ OUTPUT_DIR = os.getenv("OUTPUT_DIR", "/workspace/output")
 OUTPUT_FILE_JSONL = os.path.join(OUTPUT_DIR, "llava_captions.jsonl")
 OUTPUT_FILE_JSON = os.path.join(OUTPUT_DIR, "llava_captions.json")
 
-MAX_NEW_TOKENS = int(os.getenv("MAX_NEW_TOKENS", "420"))
+MAX_NEW_TOKENS = int(os.getenv("MAX_NEW_TOKENS", "260"))
 FLUSH_EVERY = int(os.getenv("FLUSH_EVERY", "10"))
 MAX_SIDE = int(os.getenv("MAX_SIDE", "768"))
-NUM_BEAMS = int(os.getenv("NUM_BEAMS", "3"))
+NUM_BEAMS = int(os.getenv("NUM_BEAMS", "1"))
 REPAIR_MAX_NEW_TOKENS = int(os.getenv("REPAIR_MAX_NEW_TOKENS", "240"))
 
-ENABLE_REPAIR_ATTEMPT = int(os.getenv("ENABLE_REPAIR_ATTEMPT", "1"))
+ENABLE_REPAIR_ATTEMPT = int(os.getenv("ENABLE_REPAIR_ATTEMPT", "0"))
 
 # =========================
 # Prompt
@@ -224,7 +224,7 @@ def _repair_to_json(raw_text: str) -> Dict[str, Any]:
     )
 
     inputs = processor(text=repair_prompt, return_tensors="pt")
-    inputs = {k: v.to(model.device) for k, v in inputs.items() if torch.is_tensor(v)}
+    inputs = {k: v.to(device) for k, v in inputs.items() if torch.is_tensor(v)}
 
     with torch.no_grad():
         out = model.generate(
@@ -235,6 +235,11 @@ def _repair_to_json(raw_text: str) -> Dict[str, Any]:
         )
 
     repaired = processor.batch_decode(out, skip_special_tokens=True)[0].strip()
+
+    # Free VRAM between calls
+    del out, inputs
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
     json_str = _extract_first_json_obj(repaired)
     if not json_str:
         raise ValueError("repair_failed_no_json_object_found")
@@ -248,7 +253,7 @@ def llava_describe_structured(image: Image.Image, max_new_tokens: int = MAX_NEW_
     """
     prompt = "<image>\n" + INSTRUCTION
     inputs = processor(images=image, text=prompt, return_tensors="pt")
-    inputs = {k: v.to(model.device) for k, v in inputs.items() if torch.is_tensor(v)}
+    inputs = {k: v.to(device) for k, v in inputs.items() if torch.is_tensor(v)}
 
     with torch.no_grad():
         out = model.generate(
@@ -259,6 +264,11 @@ def llava_describe_structured(image: Image.Image, max_new_tokens: int = MAX_NEW_
         )
 
     raw = processor.batch_decode(out, skip_special_tokens=True)[0].strip()
+
+    # Free VRAM between calls
+    del out, inputs
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
 
     # Extract JSON object from raw
     json_str = _extract_first_json_obj(raw)
@@ -328,11 +338,20 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"Device: {device}")
 
 processor = AutoProcessor.from_pretrained(MODEL_ID)
-model = LlavaForConditionalGeneration.from_pretrained(
-    MODEL_ID,
+
+# Match Colab footprint: avoid forcing full model to a single GPU with `.to(device)`.
+# On CUDA, let Accelerate handle placement.
+_model_kwargs = dict(
     torch_dtype=torch.float16 if device == "cuda" else torch.float32,
     low_cpu_mem_usage=True,
-).to(device)
+)
+if device == "cuda":
+    _model_kwargs["device_map"] = "auto"
+
+model = LlavaForConditionalGeneration.from_pretrained(
+    MODEL_ID,
+    **_model_kwargs,
+)
 model.eval()
 
 # =========================

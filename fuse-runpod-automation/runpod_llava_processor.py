@@ -7,11 +7,10 @@ Outputs:
 - JSONL: /workspace/output/llava_captions.jsonl  (one JSON object per line)
 - JSON : /workspace/output/llava_captions.json   (array JSON for JSONCrack)
 
-Final production-oriented version:
-- Keeps the same model, prompt, image size, and token budget used for quality.
-- Flushes every image to reduce loss on interruptions.
-- Loads the model explicitly onto a single GPU when CUDA is available.
-- Uses torch.inference_mode() and explicit gc cleanup for long runs.
+This version keeps the current single-GPU/stable runtime setup and makes parsing
+more resilient for LLaVA-style pseudo-JSON outputs. The main goal is to recover
+`objective`, `interpretation`, and `visual_cues` reliably even when the model
+does not emit strict JSON.
 """
 
 import gc
@@ -37,11 +36,11 @@ OUTPUT_DIR = os.getenv("OUTPUT_DIR", "/workspace/output")
 OUTPUT_FILE_JSONL = os.path.join(OUTPUT_DIR, "llava_captions.jsonl")
 OUTPUT_FILE_JSON = os.path.join(OUTPUT_DIR, "llava_captions.json")
 
-MAX_NEW_TOKENS = int(os.getenv("MAX_NEW_TOKENS", "260"))
+MAX_NEW_TOKENS = int(os.getenv("MAX_NEW_TOKENS", "350"))
 FLUSH_EVERY = int(os.getenv("FLUSH_EVERY", "1"))
 MAX_SIDE = int(os.getenv("MAX_SIDE", "768"))
 NUM_BEAMS = int(os.getenv("NUM_BEAMS", "1"))
-REPAIR_MAX_NEW_TOKENS = int(os.getenv("REPAIR_MAX_NEW_TOKENS", "240"))
+REPAIR_MAX_NEW_TOKENS = int(os.getenv("REPAIR_MAX_NEW_TOKENS", "350"))
 
 ENABLE_REPAIR_ATTEMPT = int(os.getenv("ENABLE_REPAIR_ATTEMPT", "0"))
 
@@ -52,10 +51,9 @@ INSTRUCTION = (
     "You are analysing an artwork image.\n"
     "\n"
     "Step 1: Describe objectively what is visibly present in the image.\n"
-    "Step 2: Provide a conceptual interpretation of the possible meaning, symbolism, or artistic intent.\n"
+    "Step 2: Provide a detailed conceptual interpretation of the possible meaning, symbolism, or artistic intent.\n"
     "Base this interpretation on the visual elements that can be observed.\n"
-    "Step 3: List 4–8 short visual cues that support your interpretation.\n"
-    "Step 4: Offer up to 2 alternative interpretations if plausible.\n"
+    "Step 3: List 3–5 short visual cues that support your interpretation.\n"
     "\n"
     "IMPORTANT:\n"
     "If there is clearly readable text in the image, treat it as part of the artwork and consider its meaning.\n"
@@ -65,7 +63,7 @@ INSTRUCTION = (
     "Do not invent facts not supported by the image.\n"
     "\n"
     "Output JSON with keys:\n"
-    "objective, interpretation, visual_cues, alternatives, confidence.\n"
+    "objective, interpretation, visual_cues.\n"
 )
 
 # Globals initialised after model load
@@ -89,18 +87,13 @@ def resize_for_vlm(img: Image.Image, max_side: int = 768) -> Image.Image:
 
 def _extract_first_json_obj(text: str) -> Optional[str]:
     """
-    Extract the first JSON object substring from a model output.
-
-    Uses a balanced-brace scan to avoid greedy regex issues when the model
-    outputs extra braces or multiple JSON objects.
+    Extract the first JSON object substring from model output using balanced braces.
     """
     t = (text or "").strip()
     if not t:
         return None
 
-    # Normalise common artefact: model outputs 'visual\_cues' (escaped underscore)
     t = t.replace("\\_", "_")
-
     start = t.find("{")
     if start == -1:
         return None
@@ -130,90 +123,176 @@ def _extract_first_json_obj(text: str) -> Optional[str]:
             depth -= 1
             if depth == 0:
                 return t[start:i + 1]
-
     return None
 
 
 def _safe_json_loads(s: str) -> Dict[str, Any]:
-    """Load JSON safely, raising a useful error message."""
     try:
         return json.loads(s)
     except json.JSONDecodeError as e:
         raise ValueError(f"Invalid JSON: {e}") from e
 
 
+def _split_short_cues(text: str) -> List[str]:
+    """
+    Turn a long cue string into a cleaner list of short cues.
+    """
+    t = (text or "").strip()
+    if not t:
+        return []
+
+    # Remove common leading labels
+    t = re.sub(r"^\s*(visual[_ ]?cues?|cues?)\s*:\s*", "", t, flags=re.I)
+
+    # First pass: bullet-like separators and sentence boundaries
+    parts = re.split(r"(?:\s*[;\n•]\s*|\.\s+)", t)
+    cleaned = []
+    for part in parts:
+        part = part.strip(" -,\t\r\n")
+        if not part:
+            continue
+        # Second pass: break long conjunction chains
+        subparts = re.split(r"\s+(?:and|with|plus)\s+", part)
+        for sp in subparts:
+            sp = sp.strip(" -,\t\r\n")
+            if sp:
+                cleaned.append(sp)
+
+    # Deduplicate while preserving order
+    out = []
+    seen = set()
+    for item in cleaned:
+        key = item.lower()
+        if key not in seen:
+            seen.add(key)
+            out.append(item)
+
+    return out[:8]
+
+
+def _normalise_to_list(value: Any, field_name: str) -> List[str]:
+    if value is None:
+        return []
+    if isinstance(value, list):
+        items = []
+        for item in value:
+            if item is None:
+                continue
+            s = str(item).strip()
+            if s:
+                items.append(s)
+        if field_name == "visual_cues" and len(items) == 1:
+            return _split_short_cues(items[0]) or items
+        return items
+
+    s = str(value).strip()
+    if not s:
+        return []
+    if field_name == "visual_cues":
+        return _split_short_cues(s) or [s]
+    return [s]
+
+
 def _normalise_llava_json(d: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Normalise model output to a stable schema for downstream use.
-    - Ensures required keys exist.
-    - Coerces visual_cues/alternatives to lists.
-    - Coerces confidence to float in [0, 1] when possible.
-    """
     out: Dict[str, Any] = dict(d or {})
 
     out.setdefault("objective", "")
     out.setdefault("interpretation", "")
     out.setdefault("visual_cues", [])
-    out.setdefault("alternatives", [])
-    out.setdefault("confidence", None)
 
-    if isinstance(out.get("visual_cues"), str):
-        vc = out["visual_cues"].strip()
-        out["visual_cues"] = [vc] if vc else []
-    elif out.get("visual_cues") is None:
-        out["visual_cues"] = []
-    else:
-        out["visual_cues"] = list(out["visual_cues"]) if not isinstance(out["visual_cues"], list) else out["visual_cues"]
+    out["objective"] = str(out.get("objective") or "").strip()
+    out["interpretation"] = str(out.get("interpretation") or "").strip()
+    out["visual_cues"] = _normalise_to_list(out.get("visual_cues"), "visual_cues")
 
-    if isinstance(out.get("alternatives"), str):
-        alt = out["alternatives"].strip()
-        out["alternatives"] = [alt] if alt else []
-    elif out.get("alternatives") is None:
-        out["alternatives"] = []
-    else:
-        out["alternatives"] = list(out["alternatives"]) if not isinstance(out["alternatives"], list) else out["alternatives"]
+    # Remove obvious prompt-echo artefacts
+    bad_objectives = {
+        "analyse an artwork image",
+        "analyze an artwork image",
+        "analyse the artwork image",
+        "analyze the artwork image",
+    }
+    if out["objective"].strip().lower() in bad_objectives:
+        out["objective"] = ""
 
-    conf = out.get("confidence")
-    if isinstance(conf, str):
-        s = conf.strip().lower()
-        mapping = {
-            "very high": 0.95,
-            "high": 0.85,
-            "medium": 0.65,
-            "moderate": 0.65,
-            "low": 0.35,
-            "very low": 0.15,
-        }
-        if s in mapping:
-            out["confidence"] = mapping[s]
-        else:
-            try:
-                out["confidence"] = float(re.findall(r"[-+]?[0-9]*\.?[0-9]+", s)[0])
-            except Exception:
-                out["confidence"] = None
-    elif isinstance(conf, (int, float)):
-        out["confidence"] = float(conf)
-    else:
-        out["confidence"] = None
-
-    if isinstance(out["confidence"], float):
-        out["confidence"] = max(0.0, min(1.0, out["confidence"]))
-
-    if isinstance(out.get("objective"), str):
-        obj = out["objective"].strip()
-        if obj.lower() in (
-            "analyse an artwork image",
-            "analyze an artwork image",
-            "analyse the artwork image",
-            "analyze the artwork image",
-        ):
-            out["objective"] = ""
+    if out["interpretation"].strip().lower() in bad_objectives:
+        out["interpretation"] = ""
 
     return out
 
 
+def _extract_section(raw: str, key: str, next_keys: List[str]) -> str:
+    """
+    Extract a section from pseudo-JSON or key:value text such as:
+    objective: ...
+    interpretation: ...
+    visual_cues: ...
+    """
+    if not raw:
+        return ""
+
+    # Build a forgiving boundary pattern
+    if next_keys:
+        next_group = "|".join(re.escape(k) for k in next_keys)
+        pattern = rf"(?is)(?:^|\n|\r)\s*{re.escape(key)}\s*[:=]\s*(.*?)(?=(?:\n|\r)\s*(?:{next_group})\s*[:=]|\Z)"
+        m = re.search(pattern, raw)
+        if not m:
+            pattern_inline = rf"(?is)\b{re.escape(key)}\s*[:=]\s*(.*?)(?=\b(?:{next_group})\s*[:=]|\Z)"
+            m = re.search(pattern_inline, raw)
+            if not m:
+                return ""
+        return m.group(1).strip(" \n\r\t,;")
+    else:
+        pattern = rf"(?is)(?:^|\n|\r)\s*{re.escape(key)}\s*[:=]\s*(.*?)(?=\Z)"
+        m = re.search(pattern, raw)
+        if not m:
+            pattern_inline = rf"(?is)\b{re.escape(key)}\s*[:=]\s*(.*?)(?=\Z)"
+            m = re.search(pattern_inline, raw)
+            if not m:
+                return ""
+        return m.group(1).strip(" \n\r\t,;")
+
+
+def _parse_loose_key_value_output(raw: str) -> Optional[Dict[str, Any]]:
+    """
+    Parse non-JSON outputs that still contain the desired keys.
+    Works on formats such as:
+    objective: ...
+    interpretation: ...
+    visual_cues: ...
+    """
+    if not raw:
+        return None
+
+    text = raw.replace("\\_", "_").strip()
+
+    # Strip fenced code blocks if any
+    text = re.sub(r"^```(?:json)?\s*", "", text, flags=re.I)
+    text = re.sub(r"\s*```$", "", text)
+
+    extracted = {
+        "objective": _extract_section(text, "objective", ["interpretation", "visual_cues"]),
+        "interpretation": _extract_section(text, "interpretation", ["visual_cues"]),
+        "visual_cues": _extract_section(text, "visual_cues", []),
+    }
+
+    # If not enough structure, give up
+    if not any(extracted.values()):
+        return None
+
+    # Handle possible JSON-like list strings
+    val = extracted["visual_cues"]
+    if val:
+        v = str(val).strip()
+        if v.startswith("[") and v.endswith("]"):
+            try:
+                extracted["visual_cues"] = json.loads(v)
+            except Exception:
+                pass
+
+    return _normalise_llava_json(extracted)
+
+
 def _cleanup_cuda(*objs: Any) -> None:
-    """Free references and encourage host/GPU memory cleanup."""
     for obj in objs:
         try:
             del obj
@@ -225,7 +304,6 @@ def _cleanup_cuda(*objs: Any) -> None:
 
 
 def _move_inputs_to_device(batch: Dict[str, Any], target_device: str) -> Dict[str, Any]:
-    """Move tensor inputs to the selected device."""
     moved: Dict[str, Any] = {}
     for k, v in batch.items():
         if torch.is_tensor(v):
@@ -236,12 +314,11 @@ def _move_inputs_to_device(batch: Dict[str, Any], target_device: str) -> Dict[st
 
 
 def _repair_to_json(raw_text: str) -> Dict[str, Any]:
-    """Attempt to repair malformed model output into strict JSON using a second pass."""
     repair_prompt = (
         "You will be given an output that SHOULD be a single JSON object.\n"
         "Fix it and output STRICT JSON only.\n\n"
         "Rules:\n"
-        "- Do NOT include any extra keys.\n"
+        "- Use only these keys: objective, interpretation, visual_cues.\n"
         "- Do NOT include any markdown.\n\n"
         "TEXT:\n"
         f"{raw_text}\n"
@@ -269,8 +346,16 @@ def _repair_to_json(raw_text: str) -> Dict[str, Any]:
 
 def llava_describe_structured(image: Image.Image, max_new_tokens: int = MAX_NEW_TOKENS) -> Dict[str, Any]:
     """
-    Generate artwork description using LLaVA, returning a structured dict.
-    On parse errors, returns dict with raw_output + parse_error.
+    Generate artwork description using LLaVA.
+
+    Success hierarchy:
+    1. strict JSON parse
+    2. loose key-value parse
+    3. optional repair pass
+    4. raw fallback
+
+    Success is defined by usable recovery of objective + interpretation +
+    visual_cues, with interpretation being the most important field.
     """
     prompt = "<image>\n" + INSTRUCTION
     inputs = processor(images=image, text=prompt, return_tensors="pt")
@@ -287,38 +372,54 @@ def llava_describe_structured(image: Image.Image, max_new_tokens: int = MAX_NEW_
     raw = processor.batch_decode(out, skip_special_tokens=True)[0].strip()
     _cleanup_cuda(out, inputs)
 
+    # Path 1: strict JSON object
     json_str = _extract_first_json_obj(raw)
-    if not json_str:
-        return {
-            "raw_output": raw,
-            "parse_error": "no_json_object_found",
-        }
+    if json_str:
+        try:
+            parsed = _safe_json_loads(json_str)
+            parsed = _normalise_llava_json(parsed)
+            parsed["_parse_mode"] = "strict_json"
+            return parsed
+        except Exception as e:
+            strict_error = f"json_parse_failed: {type(e).__name__}: {e}"
+        else:
+            strict_error = None
+    else:
+        strict_error = "no_json_object_found"
 
-    try:
-        parsed = _safe_json_loads(json_str)
-        return _normalise_llava_json(parsed)
-    except Exception as e:
-        if ENABLE_REPAIR_ATTEMPT:
-            try:
-                repaired = _repair_to_json(raw_text=raw)
-                repaired = _normalise_llava_json(repaired)
-                repaired["_repaired"] = True
-                return repaired
-            except Exception as e2:
-                return {
-                    "raw_output": raw,
-                    "parse_error": f"json_parse_failed: {type(e).__name__}: {e}",
-                    "repair_error": f"{type(e2).__name__}: {e2}",
-                }
+    # Path 2: loose key:value extraction
+    loose = _parse_loose_key_value_output(raw)
+    if loose and loose.get("objective") and loose.get("interpretation") and loose.get("visual_cues"):
+        loose["_parse_mode"] = "loose_key_value"
+        if strict_error:
+            loose["_parse_note"] = strict_error
+        return loose
 
-        return {
-            "raw_output": raw,
-            "parse_error": f"json_parse_failed: {type(e).__name__}: {e}",
-        }
+    # Path 3: optional repair pass
+    if ENABLE_REPAIR_ATTEMPT:
+        try:
+            repaired = _repair_to_json(raw_text=raw)
+            repaired = _normalise_llava_json(repaired)
+            repaired["_repaired"] = True
+            repaired["_parse_mode"] = "repair_pass"
+            if strict_error:
+                repaired["_parse_note"] = strict_error
+            return repaired
+        except Exception as e2:
+            return {
+                "raw_output": raw,
+                "parse_error": strict_error or "unknown_parse_error",
+                "repair_error": f"{type(e2).__name__}: {e2}",
+            }
+
+    # Path 4: raw fallback
+    return {
+        "raw_output": raw,
+        "parse_error": strict_error or "unknown_parse_error",
+    }
 
 
 def append_jsonl(path: str, rows: List[Dict[str, Any]]) -> None:
-    """Append records to a JSONL file safely."""
     with open(path, "a", encoding="utf-8") as f:
         for row in rows:
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
@@ -327,7 +428,6 @@ def append_jsonl(path: str, rows: List[Dict[str, Any]]) -> None:
 
 
 def jsonl_to_json_array(jsonl_path: str, json_path: str) -> None:
-    """Convert JSONL to a standard JSON array file (for JSONCrack)."""
     data: List[Dict[str, Any]] = []
     if not os.path.exists(jsonl_path):
         return
@@ -341,15 +441,9 @@ def jsonl_to_json_array(jsonl_path: str, json_path: str) -> None:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-# =========================
-# [1/4] Setup output dir
-# =========================
 print("\n[1/4] Preparing output directory...")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# =========================
-# Load model + processor
-# =========================
 print("\n[1/4] Loading model + processor...")
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"Device: {device}")
@@ -371,9 +465,6 @@ if device == "cuda":
 
 model.eval()
 
-# =========================
-# Find images
-# =========================
 print("\n[2/4] Scanning for images...")
 img_exts = (".png", ".jpg", ".jpeg", ".webp", ".tif", ".tiff", ".bmp")
 
@@ -382,7 +473,7 @@ if not os.path.isdir(IMAGES_DIR):
     print("Please upload your images to /workspace/images/")
     raise SystemExit(1)
 
-# Load checkpoint: only those with status == ok or ok_with_parse_issue are considered done.
+# Load checkpoint: treat records with usable structured output as done too.
 done = set()
 if os.path.exists(OUTPUT_FILE_JSONL):
     try:
@@ -393,8 +484,15 @@ if os.path.exists(OUTPUT_FILE_JSONL):
                     continue
                 record = json.loads(line)
                 status = str(record.get("status", ""))
-                if status in ("ok", "ok_with_parse_issue"):
+                desc = record.get("llava_description") or {}
+                if status in ("ok", "ok_with_parse_issue", "ok_loose_parse"):
                     done.add(record.get("image_filename"))
+                elif isinstance(desc, dict):
+                    has_objective = bool(str(desc.get("objective", "")).strip())
+                    has_interpretation = bool(str(desc.get("interpretation", "")).strip())
+                    has_visual_cues = bool(desc.get("visual_cues", []))
+                    if has_objective and has_interpretation and has_visual_cues:
+                        done.add(record.get("image_filename"))
         print(f"✓ Checkpoint loaded: {len(done)} images already processed")
     except Exception as e:
         print(f"⚠ Could not load checkpoint: {e}")
@@ -423,9 +521,6 @@ if len(todo) == 0:
     print("Nothing to do.")
     raise SystemExit(0)
 
-# =========================
-# Process
-# =========================
 print("\n[3/4] Processing images...")
 
 buffer: List[Dict[str, Any]] = []
@@ -442,9 +537,20 @@ for fn in tqdm(todo):
 
         llava_json = llava_describe_structured(img, max_new_tokens=MAX_NEW_TOKENS)
 
-        status = "ok"
-        if "parse_error" in llava_json:
+        parse_mode = llava_json.get("_parse_mode") if isinstance(llava_json, dict) else None
+        has_objective = isinstance(llava_json, dict) and bool(str(llava_json.get("objective", "")).strip())
+        has_interpretation = isinstance(llava_json, dict) and bool(str(llava_json.get("interpretation", "")).strip())
+        visual_cues = llava_json.get("visual_cues", []) if isinstance(llava_json, dict) else []
+        has_visual_cues = bool(visual_cues)
+
+        if has_objective and has_interpretation and has_visual_cues and parse_mode == "loose_key_value":
+            status = "ok_loose_parse"
+        elif has_objective and has_interpretation and has_visual_cues:
+            status = "ok"
+        elif "parse_error" in llava_json:
             status = "ok_with_parse_issue"
+        else:
+            status = "ok"
 
         record = {
             "image_filename": fn,
@@ -471,11 +577,9 @@ for fn in tqdm(todo):
         append_jsonl(OUTPUT_FILE_JSONL, buffer)
         buffer = []
 
-# Flush remaining
 if buffer:
     append_jsonl(OUTPUT_FILE_JSONL, buffer)
 
-# Convert to JSON array for convenience
 print("\n[4/4] Building JSON array file...")
 jsonl_to_json_array(OUTPUT_FILE_JSONL, OUTPUT_FILE_JSON)
 

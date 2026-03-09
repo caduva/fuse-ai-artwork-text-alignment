@@ -1,0 +1,35 @@
+The image processor of type `CLIPImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. 
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+[1/4] Preparing output directory...
+
+[1/4] Loading model + processor...
+Device: cuda
+Fetching 3 files:   0%|          | 0/3 [00:00<?, ?it/s]Fetching 3 files: 100%|██████████| 3/3 [00:00<00:00, 10913.19it/s]
+Loading weights:   0%|          | 0/686 [00:00<?, ?it/s]Loading weights: 100%|██████████| 686/686 [00:00<00:00, 8949.37it/s]
+
+[2/4] Scanning for images...
+
+======================================================================
+PROCESSING SUMMARY
+======================================================================
+Total images found : 10
+Already processed  : 0
+To process now     : 10
+Input directory    : /workspace/images
+Output JSONL       : /workspace/output/llava_captions.jsonl
+Output JSON        : /workspace/output/llava_captions.json
+Max side           : 768
+Max new tokens     : 260
+Beams              : 1
+Flush every        : 1
+Repair attempt     : 0
+======================================================================
+
+
+[3/4] Processing images...
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:51,  5.68s/it] 20%|██        | 2/10 [00:09<00:35,  4.41s/it] 30%|███       | 3/10 [00:15<00:37,  5.35s/it] 40%|████      | 4/10 [00:20<00:30,  5.02s/it] 50%|█████     | 5/10 [00:26<00:27,  5.56s/it] 60%|██████    | 6/10 [00:33<00:23,  5.88s/it] 70%|███████   | 7/10 [00:36<00:15,  5.17s/it] 80%|████████  | 8/10 [00:42<00:10,  5.21s/it] 90%|█████████ | 9/10 [00:47<00:05,  5.16s/it]100%|██████████| 10/10 [00:49<00:00,  4.16s/it]100%|██████████| 10/10 [00:49<00:00,  4.92s/it]
+
+[4/4] Building JSON array file...
+
+Done.
